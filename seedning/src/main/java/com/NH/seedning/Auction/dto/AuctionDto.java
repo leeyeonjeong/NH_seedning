@@ -14,8 +14,8 @@ import javax.persistence.ManyToOne;
 public class AuctionDto {
 
     private Long id;
-    private String price;
-    private String quantity;
+    private String money;
+    private String week;
     private String result;
     private Seed seed;
     private User user;
@@ -23,8 +23,8 @@ public class AuctionDto {
     public Auction toEntity() {
         return Auction.builder()
                 .id(id)
-                .price(price)
-                .quantity(quantity)
+                .money(money)
+                .week(week)
                 .result(result)
                 .seed(seed)
                 .user(user)
@@ -32,10 +32,10 @@ public class AuctionDto {
     }
 
     @Builder
-    private AuctionDto(Long id, String price, String quantity, String result, Seed seed, User user) {
+    private AuctionDto(Long id, String money, String week, String result, Seed seed, User user) {
         this.id = id;
-        this.price = price;
-        this.quantity = quantity;
+        this.money = money;
+        this.week = week;
         this.result = result;
         this.seed = seed;
         this.user = user;

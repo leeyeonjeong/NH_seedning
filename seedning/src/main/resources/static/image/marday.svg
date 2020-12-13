@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="30" viewBox="0 0 43 30">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-519 -1800) translate(300 1720) translate(219 80)">
+                    <rect width="43" height="30" fill="#F2F2F2" rx="15"/>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="14" letter-spacing="-.613">
+                        <tspan x="15.366" y="20">일</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="361" height="410" viewBox="0 0 361 410">
+    <defs>
+        <filter id="hr70exh1sa">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.847059 0 0 0 0 0.847059 0 0 0 0 0.847059 0 0 0 1.000000 0"/>
+        </filter>
+        <filter id="cbffpityob">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.847059 0 0 0 0 0.847059 0 0 0 0 0.847059 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <text fill="#3F3F3F" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.8" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="0" y="319">총 금액</tspan>
+                    </text>
+                    <text fill="#1CB97C" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="18" font-weight="bold" letter-spacing="-.8" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="297.96" y="319">시드머니</tspan>
+                    </text>
+                    <path fill="#F2F2F2" d="M0 61H360V121H0zM0 141H360V201H0z" transform="translate(-1230 -699) translate(1200 580) translate(30 119)"/>
+                    <g>
+                        <path fill="#FFF" stroke="#D8D8D8" d="M0.5 0.5H72.5V39.5H0.5z" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(0 221)"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="14" letter-spacing="-.7" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(0 221)">
+                            <tspan x="27.375" y="25">5주</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <path fill="#FFF" stroke="#D8D8D8" d="M0.5 0.5H72.5V39.5H0.5z" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(72 221)"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="14" letter-spacing="-.7" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(72 221)">
+                            <tspan x="23.34" y="25">10주</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <path fill="#FFF" stroke="#D8D8D8" d="M0.5 0.5H71.5V39.5H0.5z" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(144 221)"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="14" letter-spacing="-.7" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(144 221)">
+                            <tspan x="23.34" y="25">20주</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <path fill="#FFF" stroke="#D8D8D8" d="M0.5 0.5H72.5V39.5H0.5z" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(215 221)"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="14" letter-spacing="-.7" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(215 221)">
+                            <tspan x="23.34" y="25">50주</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <path fill="#FFF" stroke="#D8D8D8" d="M0.5 0.5H72.5V39.5H0.5z" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(287 221)"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="14" letter-spacing="-.7" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(287 221)">
+                            <tspan x="24.82" y="25">최대</tspan>
+                        </text>
+                    </g>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="20" y="97">판매단가(1주)</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="20" y="177">수량(주)</tspan>
+                    </text>
+                    <text fill="#1CB97C" font-family="NotoSans-Bold, Noto Sans" font-size="24" font-weight="bold" letter-spacing="-1.1" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="221.12" y="321">00,000</tspan>
+                    </text>
+                    <text fill="#222" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="295.738" y="97">00,000</tspan>
+                    </text>
+                    <text fill="#222" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="241.988" y="177">0</tspan>
+                    </text>
+                    <g>
+                        <path fill="#FFF" stroke="#D8D8D8" stroke-width=".5" d="M0.25 0.25H39.75V39.75H0.25z" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(300 151)"/>
+                        <g stroke-linecap="round" filter="url(#hr70exh1sa)" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(300 151)">
+                            <g stroke="#000" stroke-width="1.5">
+                                <path d="M12 3L12 21" transform="translate(8 8)"/>
+                                <path d="M12 3L12 21" transform="translate(8 8) rotate(-90 12 12)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <path fill="#FFF" stroke="#D8D8D8" stroke-width=".5" d="M0.25 0.25H39.75V39.75H0.25z" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(261 151)"/>
+                        <g stroke-linecap="round" filter="url(#cbffpityob)" transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(261 151)">
+                            <g>
+                                <path stroke="#000" stroke-width="1.5" d="M12 3L12 21" transform="translate(8 8) rotate(-90 12 12)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(-1230 -699) translate(1200 580) translate(30 119) translate(0 360)">
+                        <rect width="360" height="50" fill="#1CB97C" rx="25"/>
+                        <text fill="#FFF" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-size="21" font-weight="400" letter-spacing="-1">
+                            <tspan x="143.36" y="31">판매하기</tspan>
+                        </text>
+                    </g>
+                    <text fill="#3F3F3F" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.8" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="0" y="19">사용가능 시드머니</tspan>
+                    </text>
+                    <text fill="#1CB97C" font-family="NotoSans-Medium, Noto Sans" font-size="18" font-weight="400" letter-spacing="-.9" transform="translate(-1230 -699) translate(1200 580) translate(30 119)">
+                        <tspan x="245.546" y="19">62,100 </tspan> <tspan x="300.32" y="19" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo">시드머니</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

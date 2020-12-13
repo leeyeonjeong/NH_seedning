@@ -1,290 +1,604 @@
 <!doctype html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta charset="utf-8">
-<title>AUCTION</title>
-	<script type="text/JavaScript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			var endDateeeee = document.getElementById("endDateeeee").innerHTML;
-			console.log(endDateeeee);
+	<meta charset="utf-8">
+	<title>AUCTION</title>
+	<style>
+		body{width:1920px; height:2370px;}
 
-			countDouwnTimer('endtimer', endDateeeee);
-		});
+		#notificationdiv{width: 1920px; height: 60px; margin: 0 auto; background-color: #222222; position: fixed; top:0px;}
+		#announcediv{width: 500px; height: 60px; display: table; margin-left: 40px; float: left;}
+		#announceimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
+		#announcelabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
+		#detaildiv{width: 130px; height: 60px; display: table; margin-right: 50px; float: right;}
+		#detaillabel{font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:-0.8px; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
+		#detailimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
 
-		const countDouwnTimer = function (id, date) {
-			var _vDate = new Date(date);
-			var _second = 1000;
-			var _minute = _second * 60;
-			var _hour = _minute * 60;
-			var _day = _hour * 24;
-			var timer;
+		#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9; position: fixed; top:60px; background-color: #ffffff;}
+		#logodiv{width: 150px; height: 100px; display: table; margin-left: 300px; float: left;}
+		#logoimg{width: 150px; height: 30px; text-align: center; display: table-cell; vertical-align: middle;}
+		#tapdiv{width: 600px; height: 100px; display: table; margin-left: 255px; float: left;}
 
-			function showReamining() {
-				var now = new Date();
-				var disDt = _vDate - now;
+		#mainmenu{list-style-type:none; width: 600px; height: 100px;}
+		#mainmenu li{float: left; position: relative;margin: 15px 80px 0px 0px;}
+		#mainmenu li a{display: block; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; text-decoration: none;}
+		#mainmenu li:hover > a{color: #1cb97c;}
+		#mainmenu ul{list-style-type:none; margin: 0; position: absolute; width: 200px; opacity: 0;}
+		#mainmenu ul li{float: none;}
+		#mainmenu ul li a{font-size: 14px; text-align: center; font-weight: normal;}
+		#mainmenu ul li:hover a{color: #1cb97c;}
+		#mainmenu li:hover ul{opacity: 1;}
 
-				if (disDt < 0) {
-					clearInterval(timer);
-					document.getElementById(id).textContent = "해당 펀딩은 종료되었습니다.";
-					 return;
-				}
+		#memberdiv{width: 200px; height: 100px; display: table; float: left; float: right;}
+		#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #6e6e6e;}
+		#alarmdiv{width: 100px; height: 100px; text-align: left; display: table-cell; vertical-align: middle;}
+		#alarm{width: 24px; height: 24px; background-color: transparent; background-image: url("image/alarmicon.svg"); border: none; outline: none; margin-top: 10px; margin-left: 3px;}
 
-				var days = Math.floor(disDt / _day);
-				var hours = Math.floor((disDt % _day) / _hour);
-				var minutes = Math.floor((disDt % _hour) / _minute);
-				var seconds = Math.floor((disDt % _minute) / _second);
+		#auctiontapdiv{width: 1920px; height: 79px; margin: 0px auto; text-align: center; background-color: #f5f5f5; margin-top: 33px;}
+		#actiontap{width: 520px; height: 79px; margin: 0 auto;}
+		.tapclickdiv{width: 120px; height: 79px; float: left; text-align: center; display: table; margin-left: 80px;}
+		.tapclicklabel{display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e;}
+		#clicked{color: #1cb97c; border-bottom: solid 4px #1cb97c;}
 
-				document.getElementById(id).innerText = days + ":";
-				document.getElementById(id).innerText += hours + ":";
-				document.getElementById(id).innerText += minutes + ":";
-				document.getElementById(id).innerText += seconds;
-			}
-			timer = setInterval(showReamining, 1000);
+		#kinddiv{width: 1320px; height: 270px; margin: 0 auto; text-align: center;}
+		.kind{width: 180px; height: 130px; float: left; text-align: center; margin-top: 72px;}
+		.kindimg{width: 80px; height: 80px;border-radius: 50px; margin: 0 auto;}
+		.kindname{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.87px; color: #222222; margin-top: 20px;}
+
+		#searchboxdiv{width: 1320px; height: 53px; margin: 80px auto 0px; border-bottom: solid 1px #e9e9e9; padding-bottom: 23px;}
+		#totalauction{width:150px; height: 30px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.16px; color: #222222; float: left;}
+		#auctionnum{color: #1cb97c;}
+		#searchdiv{float: right;}
+		select{width:80px;height:20px; border-style : none; -webkit-appearance: none;-moz-appearance: none;appearance: none;}
+		select::-ms-expand {display: none;}
+		.select_font{font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #3f3f3f; background: url("image/select.svg")no-repeat 99% 10%;}
+
+		#seedbox{width: 1345px; height: 1732px; margin: 40px auto 0px; overflow-y: auto;}
+		.line{width:1320px; height: 520px; margin-top:86px;}
+		.auctiondiv{width: 400px; height: 520px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15); background-color: #ffffff; margin-right: 60px; float: left;}
+		.auctiontitlediv{width: 100px; height: 40px; background-color: #ffffff; display: table; text-align: left; float: left; margin-left:30px;}
+		.auctiontitle{font-family:"Noto Sans CJK KR"; font-size:14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.7px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
+		.auctiontitledatediv{width: 100px; height: 40px; background-color: #ffffff; display: table; text-align: center; float: right; margin-right:30px;}
+		.auctiontitledate{font-family:"Noto Sans CJK KR"; font-size:14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.67px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
+		.auctionimagediv{width: 370px; height: 220px;  margin-top: 40px; padding-top: 20px; padding-left: 30px;}
+		.companydiv{height: 28px; border-radius: 5px; background-color: #afb2b3; text-align: center; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #ffffff; padding-left: 7px; padding-right: 7px;}
+		.plantnamediv{width: 300px;  height: 50px; font-family:"Noto Sans CJK KR"; font-size:36px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.25; letter-spacing: -1.5px; color: #ffffff; margin-top: 5px;}
+		.category{width: 300px;  height: 50px; font-family:"Noto Sans CJK KR"; font-size:21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.25; letter-spacing: -1.5px; color: #ffffff;}
+		.endtimediv{width: 400px; height: 60px; background-color: #222222; text-align: center; display: table;}
+		.endtimetitle{width: 150px; height: 60px; display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -1px; color: #ffffff; text-align: right; margin-top: -2px;}
+		.endtimer{width: 150px; height: 60px; display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -1.1px; color: #ffffff; text-align: left; margin-left: 10px;}
+		.pricediv{width: 400px; height: 114px; margin-top: 5px;}
+		.pricelinediv{width: 400px; height: 38px;}
+		.price_left{width:150px; height: 38px; display: table; text-align: center; float: left; margin-right: 50px;}
+		.startlabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #3f3f3f; text-align: left; padding-left:30px;}
+		.price_right{width:200px; height: 38px; display: table; text-align: center; float: left;}
+		.startpricelabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #1cb97c; text-align: right; padding-right:30px;}
+		.toplowlabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #6e6e6e; text-align: left; padding-left:30px;}
+		.toplowpricelabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #3f3f3f; text-align: right; padding-right:30px;}
+		.weekdiv{width: 400px; height: 50px;}
+		.week_left{width:120px; height: 38px; display: table; text-align: center; float: left; margin-right: 50px; text-align: left; padding-left:30px;}
+		.week_right{width:170px; height: 38px; display: table; text-align: center; float: left; text-align: right; padding-right:30px;}
+		.weeklabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.9px; color: #222222;}
+		.percentlabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 600; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.9px; color: #1cb97c;}
+		.progressbardiv{width: 400px; height: 10px; margin: 0 auto; background-color: #ffffff;}
+		.progressbar{width: 80%; height: 10px; background-color: #1cb97c;}
+
+		#moreviewbtndiv{width:1320px; height: 50px; margin-top:100px;}
+		#moreviewbtn{width: 400px; height: 50px; border-radius: 25px; background-color: #1cb97c; position: relative; left:760px; border:none; outline: none; font-family:"Noto Sans CJK KR"; font-size:21px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.9px; color: #ffffff;}
+
+		#btndiv{width: 50px; height: 120px; float: right; position:fixed;bottom:10px;right:10px;}
+		#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
+		#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
+
+		#inghover1:hover {background-image: url("image/auction_ing_hover_1.png");}
+		#inghover2:hover {background-image: url("image/auction_ing_hover_2.png");}
+		#inghover3:hover {background-image: url("image/auction_ing_hover_3.png");}
+		#inghover4:hover {background-image: url("image/auction_ing_hover_4.png");}
+		#inghover5:hover {background-image: url("image/auction_ing_hover_5.png");}
+		#inghover6:hover {background-image: url("image/auction_ing_hover_6.png");}
+		#inghover7:hover {background-image: url("image/auction_ing_hover_7.png");}
+		#inghover8:hover {background-image: url("image/auction_ing_hover_8.png");}
+		#inghover9:hover {background-image: url("image/auction_ing_hover_9.png");}
+
+		#btndiv{width: 50px; height: 120px; float: left; position:fixed; bottom:10px; left:1790px;}
+		#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
+		#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
+
+		#footer{width: 1620px; height: 390px; background-color: #f5f5f5; margin-top: 1520px; padding-left: 300px; padding-top: 60px;}
+		.footerlabel{font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height: 1.67px; letter-spacing: -0.3px;}
+	</style>
+	<script language="javascript">
+		function onmouse(company,plant,cate){
+			var child1 = document.getElementById(company);
+			var child2 = document.getElementById(plant);
+			var child3 = document.getElementById(cate);
+			child1.style.visibility = "hidden";
+			child2.style.visibility = "hidden";
+			child3.style.visibility = "hidden";
+		}
+
+		function outmouse(company,plant,cate){
+			var child1 = document.getElementById(company);
+			var child2 = document.getElementById(plant);
+			var child3 = document.getElementById(cate);
+			child1.style.visibility = "visible";
+			child2.style.visibility = "visible";
+			child3.style.visibility = "visible";
+		}
+
+		function height(height) {
+			document.getElementById("toptapdiv").style.height = height;
 		}
 
 	</script>
-<style>
-	body{width:1920px; height:  3157px; margin: 0 auto;}
-
-	#notificationdiv{width: 1920px; height: 60px; margin: 0 auto; background-color: #222222;}
-	#announcediv{width: 500px; height: 60px; display: table; margin-left: 40px; float: left;}
-	#announceimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
-	#announcelabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
-	#detaildiv{width: 130px; height: 60px; display: table; margin-right: 50px; float: right;}
-	#detaillabel{font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:-0.8px; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
-	#detailimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
-
-	#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9;}
-	#logodiv{width: 150px; height: 100px; display: table; margin-left: 300px; float: left;}
-	#logoimg{width: 150px; height: 30px; text-align: center; display: table-cell; vertical-align: middle;}
-	#tapdiv{width: 600px; height: 100px; display: table; margin-left: 255px;  float: left;}
-
-	#mainmenu{list-style-type:none; width: 600px; height: 100px;}
-	#mainmenu li{float: left; position: relative;margin: 15px 80px 0px 0px;}
-	#mainmenu li a{display: block; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; text-decoration: none;}
-	#mainmenu li:hover > a{color: #1cb97c;}
-	#mainmenu ul{list-style-type:none; margin: 0; position: absolute; width: 200px; opacity: 0;}
-	#mainmenu ul li{float: none;}
-	#mainmenu ul li a{font-size: 14px; text-align: center; font-weight: normal;}
-	#mainmenu ul li:hover a{color: #1cb97c;}
-	#mainmenu li:hover ul{opacity: 1;}
-
-	#memberdiv{width: 200px; height: 100px; display: table; float: left; margin-right: 50px; float: right;}
-	#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle;}
-	#login{width: 83px; height: 40px; border-radius: 20px; border: solid 1px #e9e9e9; display: table;  outline: none; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:-0.7px; letter-spacing: -1px; color: #222222; }
-	#joindiv{width: 97px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; margin-left: 10px;}
-	#join{width: 97px; height: 40px; border-radius: 20px; background-color: #1cb97c; display: table; border: none; outline: none; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:-0.7px; letter-spacing: -1px; color: #ffffff;}
-
-	#auctiontapdiv{width: 1920px; height: 79px; margin: 0 auto; text-align: center; background-color: #f5f5f5; margin-top: 33px;}
-	#actiontap{width: 520px; height: 79px; margin: 0 auto;}
-	.tapclickdiv{width: 120px; height: 79px; float: left; text-align: center; display: table; margin-left: 80px;}
-	.tapclicklabel{display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e;}
-	#clicked{color: #1cb97c; border-bottom: solid 4px #1cb97c;}
-
-	#kinddiv{width: 1320px; height: 270px; margin: 0 auto;}
-	.kind{width: 180px; height: 130px; float: left; text-align: center; position: relative; top:72px;}
-	.kindimg{width: 80px; height: 80px;border-radius: 50px; margin: 0 auto;}
-	.kindname{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.87px; color: #222222; margin-top: 20px;}
-
-	#searchboxdiv{width: 1320px; height: 53px; margin: 80px auto 0px; border-bottom: solid 1px #e9e9e9; padding-bottom: 23px;}
-	#totalauction{width:150px; height: 30px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.16px; color: #222222; float: left;}
-	#auctionnum{color: #1cb97c;}
-	#searchdiv{float: right;}
-	select{width:80px;height:20px; border-style : none; -webkit-appearance: none;-moz-appearance: none;appearance: none;}
-	select::-ms-expand {display: none;}
-	.select_font{font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #3f3f3f; background: url("image/select.svg")no-repeat 99% 10%;}
-
-	#seedbox{width: 1345px; height: 1732px; margin: 40px auto 0px; overflow-y: auto;}
-	.auctiondiv{width: 400px; height: 520px; box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.03); background-color: #ffffff;  margin-top:86px; margin-right: 60px; float: left;}
-	.auctiontitlediv{width: 100px; height: 40px; background-color: #ffffff; display: table; text-align: left; float: left; margin-left:30px;}
-	.auctiontitle{font-family:"Noto Sans CJK KR"; font-size:14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.7px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
-	.auctiontitledatediv{width: 100px; height: 40px; background-color: #ffffff; display: table; text-align: center; float: right; margin-right:30px;}
-	.auctiontitledate{font-family:"Noto Sans CJK KR"; font-size:14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.67px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
-	.auctionimagediv{width: 370px; height: 220px; background-color: #ced2d3; margin-top: 40px; padding-top: 20px; padding-left: 30px;}
-	.companydiv{width: 77px; height: 28px; border-radius: 5px; background-color: #afb2b3; text-align: center; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #ffffff;}
-	.plantnamediv{width: 300px;  height: 100px; font-family:"Noto Sans CJK KR"; font-size:36px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.25; letter-spacing: -1.5px; color: #ffffff; margin-top: 5px;}
-	.endtimediv{width: 400px; height: 60px; background-color: #222222; text-align: center; display: table;}
-	.endtimetitle{width: 150px; height: 60px; display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -1px; color: #ffffff; text-align: right; position: relative; top:-2px;}
-	.endtimer{width: 150px; height: 60px; display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -1.1px; color: #ffffff; text-align: left; position: relative; left:10px;}
-	.pricediv{width: 400px; height: 114px; margin-top: 5px;}
-	.pricelinediv{width: 400px; height: 38px;}
-	.price_left{width:150px; height: 38px; display: table; text-align: center; float: left; margin-right: 50px;}
-	.startlabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #3f3f3f;}
-	.price_right{width:200px; height: 38px; display: table; text-align: center; float: left;}
-	.startpricelabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #1cb97c;}
-	.toplowlabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #6e6e6e;}
-	.toplowpricelabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #3f3f3f;}
-	.weekdiv{width: 400px; height: 50px;}
-	.week_left{width:150px; height: 38px; display: table; text-align: center; float: left; margin-right: 50px;}
-	.week_right{width:200px; height: 38px; display: table; text-align: center; float: left;}
-	.weeklabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.9px; color: #222222;}
-	.percentlabel{display: table-cell; vertical-align: middle; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 600; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.9px; color: #1cb97c;}
-	.progressbardiv{width: 400px; height: 10px; margin: 0 auto; background-color: #ffffff;}
-	.progressbar{width: 80%; height: 10px; background-color: #1cb97c;}
-
-	#manyauctiondiv{width: 1920px; height: 50px; margin: 110px auto 0px;}
-	#manybtn{width: 400px; height: 50px; border-radius: 25px; background-color: #1cb97c; margin-left: 760px; border: none; outline: none; font-family:"Noto Sans CJK KR"; font-size:21px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.9px; color: #ffffff;}
-
-	#btndiv{width: 50px; height: 120px; float: right; position:fixed;bottom:10px;right:10px;}
-	#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
-	#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
-
-</style>
 </head>
 
 <body>
-	<div id = "toptapdiv">
-		<div id = "logodiv">
-			<div id = "logoimg"><img src = "image/logo.svg"></div>
-		</div> <!--end logodiv-->
-
-		<div id = "tapdiv">
-			<ul id = "mainmenu">
-					<li><a href = "#">브랜드소개</a>
-						<ul style = "left: -53px;">
-							<li><a href = "#">시드닝소개</a></li>
-							<li><a href = "#">이벤트</a></li>
-						</ul>
-					</li>
-
-					<li><a href = "#" style = "color:#1cb97c;">옥션</a>
-						<ul  style = "left: -80px;">
-							<li><a href = "auction_early">예정된옥션</a></li>
-							<li><a href = "auction_ing">진행중인옥션</a></li>
-							<li><a href = "auction_end">마감된옥션</a></li>
-						</ul>
-					</li>
-					<li><a href = "#">마켓</a>
-						<ul style = "left: -80px;">
-							<li><a href = "#">추천</a></li>
-							<li><a href = "#">판매가</a></li>
-							<li><a href = "#">최근 조회</a></li>
-							<li><a href = "#">관심</a></li>
-						</ul>
-					</li>
-					<li><a href = "#">마이페이지</a>
-						<ul style = "left: -50px;">
-							<li><a href = "#">마이포켓</a></li>
-							<li><a href = "#">마이씨드</a></li>
-							<li><a href = "mypage">회원정보</a></li>
-						</ul>
-					</li>
-				</ul>
-		</div> <!--end tapdiv-->
-
-		<div id = "memberdiv">
-			<div id = "logindiv"><button id = "login">로그인</button></div>
-			<div id = "joindiv"><button id = "join">회원가입</button></div>
-		</div> <!--end logindiv-->
-	</div> <!--end toptapdiv-->
-
-	<div id = "auctiontapdiv">
-		<div id = "actiontap">
-			<div class = "tapclickdiv" style = "margin-left: 0px;"><div class = "tapclicklabel" onClick="location.href = 'auction_early'">오픈예정 옥션</div></div>
-			<div class = "tapclickdiv"><div class = "tapclicklabel" id = "clicked" onClick="location.href = 'auction_ing'">진행중인 옥션</div></div>
-			<div class = "tapclickdiv"><div class = "tapclicklabel" onClick="location.href = 'auction_end'">마감된 옥션</div></div>
-		</div>
-	</div> <!--end auctiontapdiv-->
-
-	<div id = "kinddiv">
-		<div class = "kind">
-			<div class = "kindimg" style = "border: solid 3px #1cb97c; "></div>
-			<div class = "kindname" style = "color: #1cb97c;">전체</div>
-		</div>
-
-		<div class = "kind">
-			<div class = "kindimg" style = "background-image: url('image/화훼.jpg')"></div>
-			<div class = "kindname">화훼</div>
-		</div>
-
-		<div class = "kind">
-			<div class = "kindimg" style = "background-image: url('image/과수.jpg')"></div>
-			<div class = "kindname">과수</div>
-		</div>
-
-		<div class = "kind">
-			<div class = "kindimg" style = "background-image: url('image/채소류.jpg')"></div>
-			<div class = "kindname">채소류</div>
-		</div>
-
-		<div class = "kind">
-			<div class = "kindimg" style = "background-image: url('image/버섯류.jpg')"></div>
-			<div class = "kindname">버섯류</div>
-		</div>
-
-		<div class = "kind">
-			<div class = "kindimg" style = "background-image: url('image/목초작물.jpg')"></div>
-			<div class = "kindname">목초식물</div>
-		</div>
-
-		<div class = "kind">
-			<img src = "image/nexticon.svg" style = "margin-top: 25px;">
-		</div>
-	</div> <!--end kinddiv-->
-
-	<div id = "searchboxdiv">
-		<div id = "totalauction">총 <font id = "auctionnum">23</font>개의 옥션</div>
-		<div id = "searchdiv">
-			<img src = "image/searchicon_black.svg" style = "position: relative; top:5px;">
-			<select name = "sigugun" class = "select_font">
-				<option value = "" >추천순</option>
-			</select>
-		</div>
-	</div> <!--end searchboxdiv-->
-
-	<div id = "seedbox">
-		{{#seedDto}}
-			<a href="auction_detail_ing_{{id}}">
-			<div class = "auctiondiv" style = "margin-top: 0px;" >
-				<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
-				<div class = "auctiontitledatediv"><div class = "auctiontitledate">00.00.00</div></div>
-
-				<div class = "auctionimagediv">
-					<div class = "companydiv">{{corporation}}</div>
-					<div class = "plantnamediv">{{breedname}}</div>
-					<label style="visibility: hidden" name="endDateeeee" id="endDateeeee">{{endDate}}</label>
-				</div>
-
-				<div class = "endtimediv">
-					<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
-					<div class = "endtimer" id="endtimer"></div>
-				</div>
-
-				<div class = "pricediv">
-					<div class = "pricelinediv">
-						<div class = "price_left"><div class = "startlabel">시작가</div></div>
-						<div class = "price_right"><div class = "startpricelabel">{{start}}</div></div>
-					</div>
-
-					<div class = "pricelinediv">
-						<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
-						<div class = "price_right"><div class = "toplowpricelabel">00,000</div></div>
-					</div>
-
-					<div class = "pricelinediv">
-						<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
-						<div class = "price_right"><div class = "toplowpricelabel">00,000</div></div>
-					</div>
-				</div>
-
-				<div class = "weekdiv">
-					<div class = "week_left"><div class = "weeklabel">00주</div></div>
-					<div class = "week_right"><div class = "percentlabel">00%</div></div>
-				</div>
-
-				<div class = "progressbardiv"><div class = "progressbar"></div></div>
-			</div> <!--end auctiondiv-->
-			</a>
-		{{/seedDto}}
-
-	</div> <!--end seedbox-->
-
-	<div id = "manyauctiondiv"><button id = "manybtn">더 많은 옥션보기 (2/10)</button></div>
-
-	<div id = "btndiv">
-		<a href = "#"><button id = "up"></button></a>
-		<button id = "chat"></button>
+<div id = "notificationdiv">
+	<div id = "announcediv">
+		<div id = "announceimg"><img src = "image/accounceicon.svg"></div>
+		<div id = "announcelabel">매일 오전 10시 / 오후 4시 씨드닝에서 새로운 옥션이 시작됩니다.</div>
 	</div>
+
+	<div id = "detaildiv">
+		<div id = "detaillabel">자세히 알아보기</div>
+		<div id = "detailimg"><img src = "image/nexticon_small.svg"></div>
+	</div>
+</div> <!--end notificationdiv-->
+
+<div id = "toptapdiv">
+	<div id = "logodiv">
+		<div id = "logoimg"><img src = "image/logo.svg"></div>
+	</div> <!--end logodiv-->
+
+	<div id = "tapdiv">
+		<ul id = "mainmenu">
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">브랜드소개</a>
+				<ul style = "left: -53px;">
+					<li><a href = "#">시드닝소개</a></li>
+					<li><a href = "#">이벤트</a></li>
+				</ul>
+			</li>
+
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#" style = "color:#1cb97c;">옥션</a>
+				<ul  style = "left: -80px;">
+					<li><a href = "auction_early">예정된옥션</a></li>
+					<li><a href = "auction_ing">진행중인옥션</a></li>
+					<li><a href = "auction_end">마감된옥션</a></li>
+				</ul>
+			</li>
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">마켓</a>
+				<ul style = "left: -80px;">
+					<li><a href = "#">추천</a></li>
+					<li><a href = "#">판매가</a></li>
+					<li><a href = "#">최근 조회</a></li>
+					<li><a href = "#">관심</a></li>
+				</ul>
+			</li>
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">마이페이지</a>
+				<ul style = "left: -50px;">
+					<li><a href = "#">마이포켓</a></li>
+					<li><a href = "#">마이씨드</a></li>
+					<li><a href = "mypage">회원정보</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div> <!--end tapdiv-->
+
+	<div id = "memberdiv">
+		<div id = "logindiv"><label id = "name">이주디</label>님 &nbsp;&nbsp;&nbsp;| </div>
+		<div id = "alarmdiv"><button id = "alarm"></button></div>
+	</div> <!--end logindiv-->
+</div> <!--end toptapdiv-->
+
+<div id = "auctiontapdiv">
+	<div id = "actiontap">
+		<div class = "tapclickdiv" style = "margin-left: 0px;"><div class = "tapclicklabel" onClick="location.href = 'auction_early'">오픈예정 옥션</div></div>
+		<div class = "tapclickdiv"><div class = "tapclicklabel" id = "clicked" onClick="location.href = 'auction_ing'">진행중인 옥션</div></div>
+		<div class = "tapclickdiv"><div class = "tapclicklabel" onClick="location.href = 'auction_end'">마감된 옥션</div></div>
+	</div>
+</div> <!--end auctiontapdiv-->
+
+<div id = "kinddiv">
+	<div class = "kind">
+		<div class = "kindimg" style = "border: solid 3px #1cb97c; "></div>
+		<div class = "kindname" style = "color: #1cb97c;">전체</div>
+	</div>
+
+	<div class = "kind">
+		<div class = "kindimg" style = "background-image: url('image/화훼.jpg')"></div>
+		<div class = "kindname">화훼</div>
+	</div>
+
+	<div class = "kind">
+		<div class = "kindimg" style = "background-image: url('image/과수.jpg')"></div>
+		<div class = "kindname">과수</div>
+	</div>
+
+	<div class = "kind">
+		<div class = "kindimg" style = "background-image: url('image/채소류.jpg')"></div>
+		<div class = "kindname">채소류</div>
+	</div>
+
+	<div class = "kind">
+		<div class = "kindimg" style = "background-image: url('image/버섯류.jpg')"></div>
+		<div class = "kindname">버섯류</div>
+	</div>
+
+	<div class = "kind">
+		<div class = "kindimg" style = "background-image: url('image/목초작물.jpg')"></div>
+		<div class = "kindname">목초식물</div>
+	</div>
+
+	<div class = "kind">
+		<img src = "image/nexticon.svg" style = "margin-top: 25px;">
+	</div>
+</div> <!--end kinddiv-->
+
+<div id = "searchboxdiv">
+	<div id = "totalauction">총 <font id = "auctionnum">23</font>개의 옥션</div>
+	<div id = "searchdiv">
+		<img src = "image/searchicon_black.svg" style = "position: relative; top:5px;">
+		<select name = "sigugun" class = "select_font">
+			<option value = "" >마감순</option>
+		</select>
+	</div>
+</div> <!--end searchboxdiv-->
+
+<div id = "seedbox">
+	<div class = "line" style = "margin-top: 0px;">
+		<div class = "auctiondiv" style = "margin-top: 0px;" onClick="location.href = 'auction_detail_early'">
+			<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
+			<div class = "auctiontitledatediv"><div class = "auctiontitledate">20.12.10</div></div>
+
+			<div class = "auctionimagediv" id = "inghover1" style = "background-color: #ced2d3;" onMouseOver="onmouse('c1','p1','ca1')" onMouseOut="outmouse('c1','p1','ca1')">
+				<label class = "companydiv" id = "c1">연정중앙회</label>
+				<div class = "plantnamediv" id = "p1">퍼플벨</div>
+				<div class = "category" id = "ca1">채소류 &nbsp; &gt &nbsp; 가지</div>
+			</div>
+
+			<div class = "endtimediv">
+				<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
+				<div class = "endtimer">00:00:00:00</div>
+			</div>
+
+			<div class = "pricediv">
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "startlabel">시작가</div></div>
+					<div class = "price_right"><div class = "startpricelabel">11,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">31,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">11,000</div></div>
+				</div>
+			</div>
+
+			<div class = "weekdiv">
+				<div class = "week_left"><div class = "weeklabel">800주</div></div>
+				<div class = "week_right"><div class = "percentlabel">100%</div></div>
+			</div>
+
+			<div class = "progressbardiv"><div class = "progressbar" style = "width: 100%"></div></div>
+		</div> <!--end auctiondiv-->
+
+		<div class = "auctiondiv" style = "margin-top: 0px;">
+			<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
+			<div class = "auctiontitledatediv"><div class = "auctiontitledate">20.12.11</div></div>
+
+			<div class = "auctionimagediv" id = "inghover2" style = "background-color: #cfcac7;" onMouseOver="onmouse('c2','p2','ca2')" onMouseOut="outmouse('c2','p2','ca2')">
+				<label class = "companydiv" id = "c2">한미종묘</label>
+				<div class = "plantnamediv" id = "p2">페스티벌소프트핑크</div>
+				<div class = "category" id = "ca2">채소류 &nbsp; &gt &nbsp; 고추</div>
+			</div>
+
+			<div class = "endtimediv">
+				<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
+				<div class = "endtimer">00:00:00:00</div>
+			</div>
+
+			<div class = "pricediv">
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "startlabel">시작가</div></div>
+					<div class = "price_right"><div class = "startpricelabel">46,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">20,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">20,000</div></div>
+				</div>
+			</div>
+
+			<div class = "weekdiv">
+				<div class = "week_left"><div class = "weeklabel">1,200주</div></div>
+				<div class = "week_right"><div class = "percentlabel">70%</div></div>
+			</div>
+
+			<div class = "progressbardiv"><div class = "progressbar" style = "widows: 70%;"></div></div>
+		</div> <!--end auctiondiv-->
+
+		<div class = "auctiondiv" style = "margin-right: 0px; margin-top: 0px;">
+			<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
+			<div class = "auctiontitledatediv"><div class = "auctiontitledate">20.12.12</div></div>
+
+			<div class = "auctionimagediv" id = "inghover3" style = "background-color: #d6c3bf;" onMouseOver="onmouse('c3','p3','ca3')" onMouseOut="outmouse('c3','p3','ca3')">
+				<label class = "companydiv" id = "c3">동방종묘</label>
+				<div class = "plantnamediv" id = "p3">팔도사나이</div>
+				<div class = "category" id = "ca3">채소류 &nbsp; &gt &nbsp; 고추</div>
+			</div>
+
+			<div class = "endtimediv">
+				<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
+				<div class = "endtimer">00:00:00:00</div>
+			</div>
+
+			<div class = "pricediv">
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "startlabel">시작가</div></div>
+					<div class = "price_right"><div class = "startpricelabel">7,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">21,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">7,000</div></div>
+				</div>
+			</div>
+
+			<div class = "weekdiv">
+				<div class = "week_left"><div class = "weeklabel">950주</div></div>
+				<div class = "week_right"><div class = "percentlabel">90%</div></div>
+			</div>
+
+			<div class = "progressbardiv"><div class = "progressbar" style = "width:90%;"></div></div>
+		</div> <!--end auctiondiv-->
+	</div>
+
+	<div class = "line">
+		<a href="/auction_detail_ing_4">
+		<div class = "auctiondiv">
+			<div class = "auctiontitlediv">
+				<div class = "auctiontitle">옥션 오픈일</div></div>
+			<div class = "auctiontitledatediv"><div class = "auctiontitledate">20.12.13</div></div>
+
+			<div class = "auctionimagediv" id = "inghover4" style = "background-color: #cfcac7;" onMouseOver="onmouse('c4','p4','ca4')" onMouseOut="outmouse('c4','p4','ca4')" onClick = "location.href = 'auction_detail_ing'">
+				<label class = "companydiv" id = "c4">서울시드</label>
+				<div class = "plantnamediv" id = "p4">화이트베리</div>
+				<div class = "category" id = "ca4">채소류 &nbsp; &gt &nbsp; 딸기</div>
+			</div>
+
+			<div class = "endtimediv">
+				<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
+				<div class = "endtimer">00:00:00:00</div>
+			</div>
+
+			<div class = "pricediv">
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "startlabel">시작가</div></div>
+					<div class = "price_right"><div class = "startpricelabel">22,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">63,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">23,500</div></div>
+				</div>
+			</div>
+
+			<div class = "weekdiv">
+				<div class = "week_left"><div class = "weeklabel">00주</div></div>
+				<div class = "week_right"><div class = "percentlabel">100%</div></div>
+			</div>
+
+			<div class = "progressbardiv"><div class = "progressbar" style = "width:100%;"></div></div>
+		</div> <!--end auctiondiv-->
+		</a>
+
+		<div class = "auctiondiv">
+			<img src = "image/auction_alarm.jpg">
+		</div> <!--end auctiondiv-->
+
+		<div class = "auctiondiv" style = "margin-right: 0px;">
+			<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
+			<div class = "auctiontitledatediv"><div class = "auctiontitledate">00.00.00</div></div>
+
+			<div class = "auctionimagediv" id = "inghover5" style = "background-color: #7f8487;" onMouseOver="onmouse('c5','p5','ca5')" onMouseOut="outmouse('c5','p5','ca5')">
+				<label class = "companydiv" id = "c5">사카타코리아</label>
+				<div class = "plantnamediv" id = "p5">오렌지밤만다리나</div>
+				<div class = "category" id = "ca5">화훼류 &nbsp; &gt &nbsp; 레몬밤</div>
+			</div>
+
+			<div class = "endtimediv">
+				<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
+				<div class = "endtimer">00:00:00:00</div>
+			</div>
+
+			<div class = "pricediv">
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "startlabel">시작가</div></div>
+					<div class = "price_right"><div class = "startpricelabel">25,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">54,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">26,000</div></div>
+				</div>
+			</div>
+
+			<div class = "weekdiv">
+				<div class = "week_left"><div class = "weeklabel">1,800주</div></div>
+				<div class = "week_right"><div class = "percentlabel">70%</div></div>
+			</div>
+
+			<div class = "progressbardiv"><div class = "progressbar" style = "width:70%;"></div></div>
+		</div> <!--end auctiondiv-->
+	</div>
+
+	<div class = "line">
+		<div class = "auctiondiv">
+			<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
+			<div class = "auctiontitledatediv"><div class = "auctiontitledate">20.12.15</div></div>
+
+			<div class = "auctionimagediv" id = "inghover6" style = "background-color: #cfcac7;" onMouseOver="onmouse('c6','p6','ca6')" onMouseOut="outmouse('c6','p6','ca6')">
+				<label class = "companydiv" id = "c6">산림조합중앙회</label>
+				<div class = "plantnamediv" id = "p6">산조노루</div>
+				<div class = "category" id = "ca6">버섯류 &nbsp; &gt &nbsp; 노루궁뎅이버섯</div>
+			</div>
+
+			<div class = "endtimediv">
+				<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
+				<div class = "endtimer">00:00:00:00</div>
+			</div>
+
+			<div class = "pricediv">
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "startlabel">시작가</div></div>
+					<div class = "price_right"><div class = "startpricelabel">9,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">16,000</div></div>
+				</div>
+
+				<div class = "pricelinediv">
+					<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+					<div class = "price_right"><div class = "toplowpricelabel">9,000</div></div>
+				</div>
+			</div>
+
+			<div class = "weekdiv">
+				<div class = "week_left"><div class = "weeklabel">700주</div></div>
+				<div class = "week_right"><div class = "percentlabel">50%</div></div>
+			</div>
+
+			<div class = "progressbardiv"><div class = "progressbar" style "width:50%;"></div></div>
+	</div> <!--end auctiondiv-->
+
+	<div class = "auctiondiv">
+		<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
+		<div class = "auctiontitledatediv"><div class = "auctiontitledate">20.12.16</div></div>
+
+		<div class = "auctionimagediv" id = "inghover7" style = "background-color: #cfcac7;" onMouseOver="onmouse('c7','p7','ca7')" onMouseOut="outmouse('c7','p7','ca7')">
+			<label class = "companydiv" id = "c7">예원바이오산업</label>
+			<div class = "plantnamediv" id = "p7">달코미</div>
+			<div class = "category" id = "ca7">과주류 &nbsp; &gt &nbsp; 감귤</div>
+		</div>
+
+		<div class = "endtimediv">
+			<div class = "endtimetitle"><img src = "image/auction_endtimer.svg">옥션 종료까지</div>
+			<div class = "endtimer">00:00:00:00</div>
+		</div>
+
+		<div class = "pricediv">
+			<div class = "pricelinediv">
+				<div class = "price_left"><div class = "startlabel">시작가</div></div>
+				<div class = "price_right"><div class = "startpricelabel">21,000</div></div>
+			</div>
+
+			<div class = "pricelinediv">
+				<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+				<div class = "price_right"><div class = "toplowpricelabel">77,000</div></div>
+			</div>
+
+			<div class = "pricelinediv">
+				<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+				<div class = "price_right"><div class = "toplowpricelabel">21,000</div></div>
+			</div>
+		</div>
+
+		<div class = "weekdiv">
+			<div class = "week_left"><div class = "weeklabel">2,750주</div></div>
+			<div class = "week_right"><div class = "percentlabel">60%</div></div>
+		</div>
+
+		<div class = "progressbardiv"><div class = "progressbar" style = "width:60%;"></div></div>
+	</div> <!--end auctiondiv-->
+
+	<div class = "auctiondiv" style = "margin-right: 0px;">
+		<div class = "auctiontitlediv"><div class = "auctiontitle">옥션 오픈일</div></div>
+		<div class = "auctiontitledatediv"><div class = "auctiontitledate">20.12.17</div></div>
+
+		<div class = "auctionimagediv" id = "inghover8" style = "background-color: #cfcac7;" onMouseOver="onmouse('c8','p8','ca8')" onMouseOut="outmouse('c8','p8','ca8')">
+			<label class = "companydiv" id = "c8">원지바이오</label>
+			<div class = "plantnamediv" id = "p8">샤인마토</div>
+			<div class = "category" id = "ca8">채소류 &nbsp; &gt &nbsp; 토마토</div>
+		</div>
+
+		<div class = "endtimediv">
+			<div class = "endtimetitle"><img src = "image/auction_endtimer.svg" style = "position: relative; top:5px; right: 3px;">옥션 종료까지</div>
+			<div class = "endtimer">00:00:00:00</div>
+		</div>
+
+		<div class = "pricediv">
+			<div class = "pricelinediv">
+				<div class = "price_left"><div class = "startlabel">시작가</div></div>
+				<div class = "price_right"><div class = "startpricelabel">12,000</div></div>
+			</div>
+
+			<div class = "pricelinediv">
+				<div class = "price_left"><div class = "toplowlabel">최고가</div></div>
+				<div class = "price_right"><div class = "toplowpricelabel">54,000</div></div>
+			</div>
+
+			<div class = "pricelinediv">
+				<div class = "price_left"><div class = "toplowlabel">최저가</div></div>
+				<div class = "price_right"><div class = "toplowpricelabel">13,000</div></div>
+			</div>
+		</div>
+
+		<div class = "weekdiv">
+			<div class = "week_left"><div class = "weeklabel">4,000주</div></div>
+			<div class = "week_right"><div class = "percentlabel">30%</div></div>
+		</div>
+
+		<div class = "progressbardiv"><div class = "progressbar" style = "width:30%;"></div></div>
+	</div> <!--end auctiondiv-->
+</div> <!--end line-->
+</div><!--end seedbox-->
+
+<div id = "moreviewbtndiv">
+	<button id = "moreviewbtn">더 많은 옥션보기 (2/10)</button>
+</div>
+
+<div id = "footer">
+	<img src = "image/footerlogo.svg"><br>
+	<label class = "footerlabel" style = "color: #1cb97c; position: relative; top:10px;">국내 종자 시장의 미래를 위한 첫걸음, 시드닝<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:40px;">시드닝 고객센터 02-0000-0000  |  admin@seedning.co.kr<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:80px;">(주)시드닝<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:90px;">대표자 : 이연정  |  사업자등록번호 : 000-00-00000  |  통신판매업신고 : 제 0000-서울강남-00000호<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:100px;">서울특별시 강남구 테헤란로<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:180px;">이용약관  |  개인정보처리방침<br></label>
+	<img src = "image/footerfacebook.svg" style = "position: relative; top:155px; left: 1250px;">
+	<img src = "image/footerblog.svg" style = "position: relative; top:158px; left: 1300px;">
+</div>
+
+<div id = "btndiv">
+	<a href = "#"><button id = "up"></button></a>
+	<button id = "chat"></button>
+</div>
 </body>
 </html>

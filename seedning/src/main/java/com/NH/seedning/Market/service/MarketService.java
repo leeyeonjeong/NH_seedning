@@ -23,8 +23,8 @@ public class MarketService {
         for (Auction auction : auctions) {
             AuctionDto auctionDto = AuctionDto.builder()
                     .id(auction.getId())
-                    .price(auction.getPrice())
-                    .quantity(auction.getQuantity())
+                    .money(auction.getMoney())
+                    .week(auction.getWeek())
                     .result(auction.getResult())
                     .seed(auction.getSeed())
                     .user(auction.getUser())

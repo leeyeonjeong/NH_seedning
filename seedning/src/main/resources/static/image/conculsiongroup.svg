@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="260" viewBox="0 0 420 260">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <path fill="#F9F9F9" d="M0 0H420V40H0z" transform="translate(-1200 -662) translate(1200 583) translate(0 80)"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8" transform="translate(-1200 -662) translate(1200 583) translate(0 80)">
+                            <tspan x="30" y="26">품종명</tspan>
+                        </text>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8" transform="translate(-1200 -662) translate(1200 583) translate(0 80)">
+                            <tspan x="176" y="26">단가</tspan>
+                        </text>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8" transform="translate(-1200 -662) translate(1200 583) translate(0 80)">
+                            <tspan x="256" y="26">수량</tspan>
+                        </text>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8" transform="translate(-1200 -662) translate(1200 583) translate(0 80)">
+                            <tspan x="332.32" y="26">채결금액</tspan>
+                        </text>
+                        <path stroke="#D8D8D8" stroke-width="1.2" d="M.5 39.5L419.5 39.5M.5.5L419.5.5M140.5 39L140.5 0M240.5 40L240.5 1M299.5 40L299.5 1" transform="translate(-1200 -662) translate(1200 583) translate(0 80)"/>
+                    </g>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="21" letter-spacing="-1" transform="translate(-1200 -662) translate(1200 583) translate(0 80)">
+                        <tspan x="112.277" y="251">조회할 내역이 없습니다.</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="468" height="294" viewBox="0 0 468 294">
+    <defs>
+        <filter id="ep12yz3kfa" width="120.8%" height="132.9%" x="-10.4%" y="-11.2%" filterUnits="objectBoundingBox">
+            <feOffset dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+        </filter>
+        <path id="954vgkuwdb" d="M100 0c11.046 0 20 8.954 20 20v30c0 11.046-8.954 20-20 20H64.2L60 76l-4.2-6H20C8.954 70 0 61.046 0 50V20C0 8.954 8.954 0 20 0h80z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g stroke="#D8D8D8" stroke-width=".5" opacity=".75">
+                        <path d="M.5 80.5L441.5 80.5M.5 201.5L441.5 201.5M.5 60.5L441.5 60.5M.5 181.5L441.5 181.5M.5 40.5L441.5 40.5M.5 161.5L441.5 161.5M.5 20.5L441.5 20.5M.5 141.5L441.5 141.5M.5.5L441.5.5M.5 121.5L441.5 121.5" transform="translate(-339 -316) translate(300 239) translate(39 80) translate(1 49)"/>
+                    </g>
+                    <path fill="#FF3E56" d="M21 109H61V151H21z" transform="translate(-339 -316) translate(300 239) translate(39 80)"/>
+                    <path fill="#1F4DC2" d="M141 151H181V180H141z" transform="translate(-339 -316) translate(300 239) translate(39 80)"/>
+                    <path fill="#FF3E56" d="M261 100H301V151H261z" transform="translate(-339 -316) translate(300 239) translate(39 80) matrix(1 0 0 -1 0 251)"/>
+                    <path fill="#FF3E56" d="M381 80H421V151H381z" transform="translate(-339 -316) translate(300 239) translate(39 80) matrix(1 0 0 -1 0 231)"/>
+                    <path stroke="#D8D8D8" stroke-width="1.2" d="M0.5 150.5L441.5 150.5" transform="translate(-339 -316) translate(300 239) translate(39 80)"/>
+                    <g transform="translate(-339 -316) translate(300 239) translate(39 80) translate(341)">
+                        <use fill="#000" filter="url(#ep12yz3kfa)" xlink:href="#954vgkuwdb"/>
+                        <path fill="#FFF" stroke="#E9E9E9" stroke-linejoin="square" stroke-width=".5" d="M100 .25c5.454 0 10.391 2.21 13.965 5.785 3.574 3.574 5.785 8.511 5.785 13.965h0v30c0 5.454-2.21 10.391-5.785 13.965-3.574 3.574-8.511 5.785-13.965 5.785h0-35.93L60 75.564l-4.07-5.814H20c-5.454 0-10.391-2.21-13.965-5.785C2.46 60.391.25 55.454.25 50h0V20c0-5.454 2.21-10.391 5.785-13.965C9.609 2.46 14.546.25 20 .25h0z"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-size="14" font-weight="400" letter-spacing="-.583">
+                            <tspan x="28.475" y="24">재산권 수입</tspan>
+                        </text>
+                        <text fill="#1CB97C" font-family="NotoSans-Medium, Noto Sans" font-size="24" font-weight="400" letter-spacing="-1">
+                            <tspan x="19.04" y="54">121,000</tspan>
+                        </text>
+                    </g>
+                    <text fill="#1CB97C" font-family="NotoSans-Bold, Noto Sans" font-size="16" font-weight="bold" letter-spacing="-.8" transform="translate(-339 -316) translate(300 239) translate(39 80)">
+                        <tspan x="384.796" y="286">2020</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-339 -316) translate(300 239) translate(39 80)">
+                        <tspan x="25.475" y="286">2017</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-339 -316) translate(300 239) translate(39 80)">
+                        <tspan x="145.475" y="286">2018</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-339 -316) translate(300 239) translate(39 80)">
+                        <tspan x="265.475" y="286">2019</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="777" height="251" viewBox="0 0 777 251">
+    <defs>
+        <linearGradient id="68o858rmua" x1="50%" x2="50%" y1="-34.95%" y2="80.121%">
+            <stop offset="0%" stop-color="#1CB97C" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#1CB97C" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="34fijual5c" x1="0%" x2="24.878%" y1="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="aa9caxxdyd" x1="100%" x2="80.461%" y1="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="7d27qce3xe" x1="99.063%" x2="2.217%" y1="100%" y2="100%">
+            <stop offset="0%" stop-color="#1CB97C" stop-opacity="0"/>
+            <stop offset="11.664%" stop-color="#1CB97C"/>
+            <stop offset="89.724%" stop-color="#1CB97C"/>
+            <stop offset="100%" stop-color="#1CB97C" stop-opacity="0"/>
+        </linearGradient>
+        <path id="7av7iyxngb" d="M1.465 149.195l24.131-2.817c.146-.017.294-.018.44-.003l26.784 2.809c.074.008.146.02.218.035l27.656 6.035c.14.03.283.046.427.046h21.43c.184 0 .366-.026.542-.075l21.008-5.91c.278-.08.536-.217.756-.405l17.736-15.133c.091-.077.188-.146.291-.206l16.893-9.847c.306-.178.653-.272 1.007-.272h14.566c.345 0 .684.089.984.259l17.145 9.69c.3.17.64.26.984.26h9.719c.397 0 .784.118 1.114.339l31.462 21.097c.2.134.423.23.657.286l27.596 6.468c.42.098.859.058 1.253-.113l14.438-6.273c.251-.11.523-.165.797-.165h14.345c.297 0 .591-.067.86-.195l31.62-15.073c.182-.087.375-.145.574-.174l19.508-2.834c.095-.014.19-.02.287-.02h34.81c.094 0 .188.006.282.02l19.86 2.832c.21.03.423.027.632-.01l34.683-6.16c.096-.017.19-.04.284-.072l17.468-5.831c.044-.015.087-.03.13-.049l25.284-10.441c.19-.078.389-.127.593-.145l21.286-1.825c.238-.02.477.002.708.067l19.188 5.35c.137.039.27.092.397.159l17.673 9.336c.038.02.076.041.112.063l19.385 11.893c.178.11.372.19.575.24l16.073 3.889c.09.021.18.037.273.046l14.85 1.475c.252.025.505.002.748-.067l18.717-5.352c.153-.044.3-.106.437-.184l21.027-11.933c.047-.027.095-.052.144-.074l14.18-6.593c.264-.123.552-.186.843-.186h15.844c.143 0 .285.015.424.045l10.414 2.26c.14.03.282.045.424.045h12.256c.387 0 .765-.112 1.089-.322l15.277-9.91c.28-.182.512-.432.67-.726l10.732-19.842V220.5l-715-.05v-71.255z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <text fill="#1CB97C" font-family="NotoSans-Bold, Noto Sans" font-size="16" font-weight="bold" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="559.296" y="246">2020</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="127.475" y="246">2017</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="271.475" y="246">2018</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="414.475" y="246">2019</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="741.75" y="206">9,000</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="733.737" y="170">10,000</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="733.737" y="134">11,000</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="733.737" y="98">12,000</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="733.737" y="62">13,000</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <tspan x="733.737" y="26">14,000</tspan>
+                    </text>
+                    <path stroke="#D8D8D8" stroke-width="1.2" d="M0 220.5L720 220.5M720.5.5L720 220.5" opacity=".75" transform="translate(-330 -1850) translate(300 1720) translate(30 130)"/>
+                    <path stroke="#D8D8D8" stroke-width=".7" d="M575.749 220.45L575.5.55M431.749 220.45L431.5.55M287.749 220.45L287.5.55M143.749 220.45L143.5.55" opacity=".75" transform="translate(-330 -1850) translate(300 1720) translate(30 130)"/>
+                    <g transform="translate(-330 -1850) translate(300 1720) translate(30 130)">
+                        <use fill="url(#68o858rmua)" xlink:href="#7av7iyxngb"/>
+                        <use fill="url(#34fijual5c)" xlink:href="#7av7iyxngb"/>
+                        <use fill="url(#aa9caxxdyd)" xlink:href="#7av7iyxngb"/>
+                    </g>
+                    <path stroke="url(#7d27qce3xe)" stroke-width="1.5" d="M1.465 149.195l22.7-2.65c1.097-.128 2.205-.135 3.304-.02l24.637 2.584c.55.058 1.095.145 1.634.263l25.585 5.583c1.05.229 2.122.345 3.197.345h18.236c1.373 0 2.74-.19 4.062-.561l16.534-4.652c2.088-.587 4.024-1.62 5.674-3.029l14.68-12.525c.68-.58 1.41-1.099 2.182-1.549l12.853-7.491c2.293-1.337 4.9-2.041 7.554-2.041h7.633c2.586 0 5.13.669 7.381 1.941l11.19 6.326c2.253 1.273 4.795 1.942 7.382 1.942h2.344c2.975 0 5.883.884 8.354 2.541l26.21 17.575c1.5 1.007 3.171 1.734 4.93 2.146l21.095 4.944c3.143.737 6.44.44 9.4-.846l8.008-3.48c1.886-.819 3.92-1.241 5.977-1.241h8.703c2.233 0 4.438-.5 6.454-1.46l27.19-12.961c1.359-.648 2.808-1.088 4.298-1.304l16.63-2.416c.714-.104 1.435-.156 2.156-.156h32.948c.708 0 1.416.05 2.118.15l16.886 2.41c1.575.224 3.175.197 4.741-.081l31.696-5.629c.721-.128 1.432-.309 2.127-.54l16.135-5.387c.33-.11.655-.231.976-.364l23.013-9.504c1.418-.585 2.917-.95 4.445-1.08l16.947-1.454c1.786-.153 3.585.015 5.311.497l15.58 4.345c1.032.287 2.03.685 2.977 1.185l16.07 8.489c.284.15.563.309.837.477l17.281 10.602c1.336.82 2.792 1.425 4.316 1.793l13.204 3.196c.673.163 1.356.279 2.046.347l11.483 1.14c1.883.188 3.786.016 5.606-.504l14.837-4.243c1.144-.327 2.245-.789 3.28-1.376l19.217-10.907c.353-.2.713-.386 1.08-.557l11.097-5.158c1.98-.921 4.139-1.398 6.323-1.398h11.576c1.07 0 2.136.114 3.18.34l7.69 1.669c1.045.227 2.111.341 3.18.341h7.015c2.897 0 5.733-.839 8.163-2.416l9.267-6.01c2.107-1.367 3.837-3.24 5.032-5.45l9.153-16.924h0" transform="translate(-330 -1850) translate(300 1720) translate(30 130)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

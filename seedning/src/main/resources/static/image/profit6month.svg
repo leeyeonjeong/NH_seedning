@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="30" viewBox="0 0 73 30">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-920 -320) translate(880 239) translate(40 81)">
+                    <rect width="72" height="30" x=".5" fill="#1CB97C" rx="15"/>
+                    <text fill="#FFF" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="14" letter-spacing="-.613">
+                        <tspan x="20.654" y="20">6개월</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

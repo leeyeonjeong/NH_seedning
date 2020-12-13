@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="450" viewBox="0 0 420 450">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-1200 -659) translate(1200 580) translate(0 80)">
+                    <g>
+                        <path fill="#F9F9F9" d="M0 0H420V40H0z"/>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8">
+                            <tspan x="53" y="26">구분</tspan>
+                        </text>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8">
+                            <tspan x="256" y="26">가격</tspan>
+                        </text>
+                        <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" letter-spacing="-.8">
+                            <tspan x="360.16" y="26">수량</tspan>
+                        </text>
+                        <path stroke="#D8D8D8" stroke-width="1.2" d="M.5 39.5L419.5 39.5M.5.5L419.5.5M210.5 39L210.5 0M314.5 40L314.5 1"/>
+                    </g>
+                    <g transform="translate(30 399)">
+                        <rect width="360" height="50" fill="#1CB97C" rx="25"/>
+                        <text fill="#FFF" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-size="21" font-weight="400" letter-spacing="-1">
+                            <tspan x="143.36" y="31">주문취소</tspan>
+                        </text>
+                    </g>
+                    <rect width="17" height="17" x="29.5" y="11.5" fill="#FFF" stroke="#D8D8D8" rx="3"/>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="21" letter-spacing="-1">
+                        <tspan x="112.277" y="232">미체결 목록이 없습니다.</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

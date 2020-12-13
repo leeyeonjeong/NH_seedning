@@ -1,256 +1,208 @@
 <!doctype html>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta charset="utf-8">
-<title>MYPAGE</title>
-	<script type="text/javascript">
-		function createAccount() {
-				var BrdtBrno = document.getElementsByName('BrdtBrno')[0].value;
-				var Bncd = document.getElementsByName('Bncd')[0].value;
-				var Acno = document.getElementsByName('Acno')[0].value;
-
-				var form = document.createElement("form");
-
-				form.setAttribute("charset", "UTF-8");
-				form.setAttribute("method", "Post"); // Get 또는 Post 입력
-				form.setAttribute("action", "OpenFinAccountDirect.nh");
-				form.setAttribute("Content-Type", "application/json");
-
-				var hiddenField = document.createElement("input");
-				hiddenField.setAttribute("type", "hidden");
-				hiddenField.setAttribute("name", "v1");
-				hiddenField.setAttribute("value", BrdtBrno);
-				form.appendChild(hiddenField);
-
-				hiddenField = document.createElement("input");
-				hiddenField.setAttribute("type", "hidden");
-				hiddenField.setAttribute("name", "v2");
-				hiddenField.setAttribute("value", Bncd);
-
-				hiddenField = document.createElement("input");
-				hiddenField.setAttribute("type", "hidden");
-				hiddenField.setAttribute("name", "v3");
-				hiddenField.setAttribute("value", Acno);
-
-				form.appendChild(hiddenField);
-
-				document.body.appendChild(form);
-
-				form.submit();
+	<meta charset="utf-8">
+	<title>MYPAGE</title>
+	<script language="javascript">
+		function height(height) {
+			document.getElementById("toptapdiv").style.height = height;
 		}
+
 	</script>
-<style>
-	body{width:1920px; height:  3157px; margin: 0 auto;}
-	#notificationdiv{width: 1920px; height: 60px; margin: 0 auto; background-color: #222222;}
-	#announcediv{width: 500px; height: 60px; display: table; margin-left: 40px; float: left;}
-	#announceimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
-	#announcelabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
-	#detaildiv{width: 130px; height: 60px; display: table; margin-right: 50px; float: right;}
-	#detaillabel{font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:-0.8px; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
-	#detailimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
-	
-	#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9;}
-	#logodiv{width: 150px; height: 100px; display: table; margin-left: 300px; float: left;}
-	#logoimg{width: 150px; height: 30px; text-align: center; display: table-cell; vertical-align: middle;}
-	#tapdiv{width: 600px; height: 100px; display: table; margin-left: 255px; float: left;}
-	
-	#mainmenu{list-style-type:none; width: 600px; height: 100px;}
-	#mainmenu li{float: left; position: relative;margin: 15px 80px 0px 0px;}
-	#mainmenu li a{display: block; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; text-decoration: none;}
-	#mainmenu li:hover > a{color: #1cb97c;}
-	#mainmenu ul{list-style-type:none; margin: 0; position: absolute; width: 200px; opacity: 0;}
-	#mainmenu ul li{float: none;}
-	#mainmenu ul li a{font-size: 14px; text-align: center; font-weight: normal;}
-	#mainmenu ul li:hover a{color: #1cb97c;}
-	#mainmenu li:hover ul{opacity: 1;}
-	
-	#memberdiv{width: 200px; height: 100px; display: table; float: left; float: right;}
-	#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #6e6e6e;}
-	#alarmdiv{width: 100px; height: 100px; text-align: left; display: table-cell; vertical-align: middle;}
-	#alarm{width: 24px; height: 24px; background-color: transparent; background-image: url("image/alarmicon.svg"); border: none; outline: none; margin-top: 10px; margin-left: 3px;}
-	
-	#accountboxdiv{width: 1920px; height: 80px; text-align: center;}
-	#accountbox{width: 1320px; height: 80px; background-color: #1cb97c; margin: 140px auto 0px;}
-	#namediv{width: 150px; height: 80px; margin-left: 40px; display: table; text-align: left; float: left;}
-	#namelabel{display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.84px; color: #ffffff;}
-	#accountregi{width: 122px; height: 80px; float: right; margin-right: 40px;}
-	#accountbtn{width: 122px; height: 35px; border-radius: 20px; border: solid 1px #e9e9e9; background-color: rgba(255, 255, 255, 0.25);margin-top: 23px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.84px; color: #ffffff;}
-	
-	#pocketboxdiv{width: 1320px; height: 220px; border: solid 1px #d8d8d8;  background-color: #ffffff; margin: 20px auto 0px;}
-	#pockettitle{width: 140px; height: 220px; text-align: left; margin-left: 40px; float: left;}
-	#pocketicondiv{width: 140px; height: 40px; margin-top: 40px;}
-	#pocketlabeldiv{font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #222222;}
-	#pockettitlebtn{width: 97px; height: 40px; border-radius: 20px; background-color: #1cb97c; border: none; outline: none; margin-top: 20px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight:  normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #ffffff;}
-	#myseedbox{width: 253px; height: 142px; float: left; padding-left: 100px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
-	#myseedtitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
-	.font{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e;}
-	#myseedmoney{width: 110px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #1cb97c; margin-top: 40px;}
-	#waitseedbox{width: 240px; height: 142px; float: left; padding-left: 20px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
-	#waitseedtitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
-	#waitseedmoney{width: 110px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; margin-top: 40px;}
-	#btnbox{width: 324px; height: 220px; float: right; margin-right: 40px;}
-	#seedchargebtn{width: 152px; height: 40px; margin-top: 90px; border-radius: 20px; background-color: #1cb97c; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #ffffff; border: none; outline: none;}
-	#seedwithdrawbtn{width: 152px; height: 40px; border-radius: 20px; border: solid 1px #e9e9e9; background-color: #ffffff; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #222222; outline: none;}
-	
-	#assetboxdiv{width: 1320px; height: 220px; border: solid 1px #d8d8d8;  background-color: #ffffff; margin: 40px auto 0px;}
-	#assettitle{width: 140px; height: 220px; text-align: left; margin-left: 40px; float: left;}
-	#asseticondiv{width: 140px; height: 40px; margin-top: 40px;}
-	#assetlabeldiv{font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #222222;}
-	#assettitlebtn{width: 97px; height: 40px; border-radius: 20px; background-color: #1cb97c; border: none; outline: none; margin-top: 20px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight:  normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #ffffff;}
-	#evaluationbox{width: 253px; height: 142px; float: left; padding-left: 100px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
-	#evaluationtitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
-	.font{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e;}
-	#evaluationmoney{width: 110px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; margin-top: 40px;}
-	.assetbox{width: 240px; height: 142px; float: left; padding-left: 20px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
-	.assettitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
-	.assetmoney{width: 200px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; margin-top: 40px;}
-	.upanddown{width: 36px; height: 36px; position: relative; top:5px; margin-right: 3px;}
-	
-	#btndiv{width: 50px; height: 120px; float: right; position:fixed;bottom:10px;right:10px;}
-	#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
-	#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
-	
-</style>
+	<style>
+		body{width:1920px; height:  1157px; margin: 0 auto;}
+
+		#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9;}
+		#logodiv{width: 150px; height: 100px; display: table; margin-left: 300px; float: left;}
+		#logoimg{width: 150px; height: 30px; text-align: center; display: table-cell; vertical-align: middle;}
+		#tapdiv{width: 600px; height: 100px; display: table; margin-left: 255px; float: left;}
+
+		#mainmenu{list-style-type:none; width: 600px; height: 100px;}
+		#mainmenu li{float: left; position: relative;margin: 15px 80px 0px 0px;}
+		#mainmenu li a{display: block; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; text-decoration: none;}
+		#mainmenu li:hover > a{color: #1cb97c;}
+		#mainmenu ul{list-style-type:none; margin: 0; position: absolute; width: 200px; opacity: 0;}
+		#mainmenu ul li{float: none;}
+		#mainmenu ul li a{font-size: 14px; text-align: center; font-weight: normal;}
+		#mainmenu ul li:hover a{color: #1cb97c;}
+		#mainmenu li:hover ul{opacity: 1;}
+
+		#memberdiv{width: 200px; height: 100px; display: table; float: left; float: right;}
+		#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #6e6e6e;}
+		#alarmdiv{width: 100px; height: 100px; text-align: left; display: table-cell; vertical-align: middle;}
+		#alarm{width: 24px; height: 24px; background-color: transparent; background-image: url("image/alarmicon.svg"); border: none; outline: none; margin-top: 10px; margin-left: 3px;}
+
+		#accountboxdiv{width: 1920px; height: 80px; text-align: center;}
+		#accountbox{width: 1320px; height: 80px; background-color: #1cb97c; margin: 140px auto 0px;}
+		#namediv{width: 200px; height: 80px; margin-left: 40px; display: table; text-align: left; float: left;}
+		#namelabel{display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.84px; color: #ffffff;}
+		#accountregi{width: 220px; height: 80px; float: right; margin-right: 40px;}
+		#accountbtn{width: 220px; height: 35px; border-radius: 20px; border: solid 1px #e9e9e9; background-color: rgba(255, 255, 255, 0.25);margin-top: 23px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.84px; color: #ffffff;}
+
+		#pocketboxdiv{width: 1320px; height: 220px; border: solid 1px #d8d8d8;  background-color: #ffffff; margin: 20px auto 0px;}
+		#pockettitle{width: 140px; height: 220px; text-align: left; margin-left: 40px; float: left;}
+		#pocketicondiv{width: 140px; height: 40px; margin-top: 40px;}
+		#pocketlabeldiv{font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #222222;}
+		#pockettitlebtn{width: 97px; height: 40px; border-radius: 20px; background-color: #1cb97c; border: none; outline: none; margin-top: 20px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight:  normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #ffffff;}
+		#myseedbox{width: 253px; height: 142px; float: left; padding-left: 100px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
+		#myseedtitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
+		.font{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e;}
+		#myseedmoney{width: 110px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #1cb97c; margin-top: 40px;}
+		#waitseedbox{width: 240px; height: 142px; float: left; padding-left: 20px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
+		#waitseedtitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
+		#waitseedmoney{width: 110px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; margin-top: 40px;}
+		#btnbox{width: 324px; height: 220px; float: right; margin-right: 40px;}
+		#seedchargebtn{width: 152px; height: 40px; margin-top: 90px; border-radius: 20px; background-color: #1cb97c; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #ffffff; border: none; outline: none;}
+		#seedwithdrawbtn{width: 152px; height: 40px; border-radius: 20px; border: solid 1px #e9e9e9; background-color: #ffffff; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #222222; outline: none;}
+
+		#assetboxdiv{width: 1320px; height: 220px; border: solid 1px #d8d8d8;  background-color: #ffffff; margin: 40px auto 0px;}
+		#assettitle{width: 140px; height: 220px; text-align: left; margin-left: 40px; float: left;}
+		#asseticondiv{width: 140px; height: 40px; margin-top: 40px;}
+		#assetlabeldiv{font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #222222;}
+		#assettitlebtn{width: 97px; height: 40px; border-radius: 20px; background-color: #1cb97c; border: none; outline: none; margin-top: 20px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight:  normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #ffffff;}
+		#evaluationbox{width: 253px; height: 142px; float: left; padding-left: 100px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
+		#evaluationtitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
+		.font{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e;}
+		#evaluationmoney{width: 110px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; margin-top: 40px;}
+		.assetbox{width: 240px; height: 142px; float: left; padding-left: 20px; border-right: solid 1px #e9e9e9; margin-top: 35px;}
+		.assettitle{width: 283px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #6e6e6e;}
+		.assetmoney{width: 200px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; margin-top: 40px;}
+		.upanddown{width: 36px; height: 36px; position: relative; top:5px; margin-right: 3px;}
+
+		#btndiv{width: 50px; height: 120px; float: right; position:fixed;bottom:10px;right:10px;}
+		#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
+		#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
+
+		#footer{width: 1620px; height: 390px; background-color: #f5f5f5; position: relative; top:140px; padding-left: 310px; padding-top: 60px;}
+		.footerlabel{font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height: 1.67px; letter-spacing: -0.3px;}
+
+	</style>
 </head>
 
 <body>
-	<div id = "notificationdiv">
-		<div id = "announcediv">
-			<div id = "announceimg"><img src = "image/accounceicon.svg"></div>
-			<div id = "announcelabel">매일 오전 10시 / 오후 4시 씨드닝에서 새로운 옥션이 시작됩니다.</div>
-		</div>
-		
-		<div id = "detaildiv">
-			<div id = "detaillabel">자세히 알아보기</div>
-			<div id = "detailimg"><img src = "image/nexticon_small.svg"></div>
-		</div>
-	</div> <!--end notificationdiv-->
-	
-	<div id = "toptapdiv">
-		<div id = "logodiv">
-			<div id = "logoimg"><img src = "image/logo.svg"></div>
-		</div> <!--end logodiv-->
-			
-		<div id = "tapdiv">
-			<ul id = "mainmenu">
-					<li><a href = "#">브랜드소개</a>
-						<ul style = "left: -53px;">
-							<li><a href = "#">시드닝소개</a></li>
-							<li><a href = "#">이벤트</a></li>
-						</ul>
-					</li>
-					
-					<li><a href = "#">옥션</a>
-						<ul  style = "left: -80px;">
-							<li><a href = "auction_early">예정된옥션</a></li>
-							<li><a href = "auction_ing">진행중인옥션</a></li>
-							<li><a href = "auction_end">마감된옥션</a></li>
-						</ul>
-					</li>
-					<li><a href = "#">마켓</a>
-						<ul style = "left: -80px;">
-							<li><a href = "#">추천</a></li>
-							<li><a href = "#">판매가</a></li>
-							<li><a href = "#">최근 조회</a></li>
-							<li><a href = "#">관심</a></li>
-						</ul>
-					</li>
-					<li><a href = "#" style = "color: #1cb97c;">마이페이지</a>
-						<ul style = "left: -50px;">
-							<li><a href = "#">마이포켓</a></li>
-							<li><a href = "#">마이씨드</a></li>
-							<li><a href = "mypage">회원정보</a></li>
-						</ul>
-					</li>
+
+<div id = "toptapdiv">
+	<div id = "logodiv">
+		<div id = "logoimg"><img src = "image/logo.svg"></div>
+	</div> <!--end logodiv-->
+
+	<div id = "tapdiv">
+		<ul id = "mainmenu">
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">서비스소개</a>
+				<ul style = "left: -53px;">
+					<li><a href = "#">시드닝이란</a></li>
 				</ul>
-		</div> <!--end tapdiv-->
-		
-		<div id = "memberdiv">
-			<div id = "logindiv"><label id = "name">{{name}}</label>님 &nbsp;&nbsp;&nbsp;| </div>
-			<div id = "alarmdiv"><button id = "alarm"></button></div>
-		</div> <!--end logindiv-->
-	</div> <!--end toptapdiv-->
-	
-	<div id = "accountboxdiv">
-		<div id = "accountbox">
-			<div id = "namediv"><div id = "namelabel"><label style = "font-weight: bold; margin-right: 5px;">{{name}}</label>님</div></div>
+			</li>
 
-			<form action="OpenFinAccountDirect.nh" method="post">
-				<div id = "accountregi">
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">옥션</a>
+				<ul  style = "left: -80px;">
+					<li><a href = "auction_early">예정된옥션</a></li>
+					<li><a href = "auction_ing">진행중인옥션</a></li>
+					<li><a href = "auction_end">마감된옥션</a></li>
+				</ul>
+			</li>
 
-					<button type="submit" id = "accountbtn">
-						<img src = "image/accountplus.svg" style = "position: relative; top:2px; right:3px;">계좌등록
-					</button>
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">마켓</a>
+				<ul style = "left: -80px;">
+					<li><a href = "#">추천</a></li>
+					<li><a href = "#">판매가</a></li>
+					<li><a href = "#">최근 조회</a></li>
+					<li><a href = "#">관심</a></li>
+				</ul>
+			</li>
 
-					<!--
-					<button type="submit" id = "accountbtn" onclick="createAccount()">
-						<input type="hidden" name="BrdtBrno" value="19970831"/>
-						<input type="hidden" name="Bncd" value="001"/>
-						<input type="hidden" name="Acno" value="3020000002066"/>
-						<img src = "image/accountplus.svg" style = "position: relative; top:2px; right:3px;">계좌등록
-					</button>
-					-->
-				</div>
-			</form>
-		</div>
-	</div> <!--end accountboxdiv-->
-	
-	<div id = "pocketboxdiv">
-		<div id = "pockettitle">
-			<div id = "pocketicondiv"><img src = "image/pocketicon.svg"></div>
-			<div id = "pocketlabeldiv">마이 포켓</div>
-			<button id = "pockettitlebtn">거래내역</button>
-		</div>
-		
-		<div id = "myseedbox">
-			<div id = "myseedtitle">마이씨드<br><label class = "font">사용 가능 + 대기금</label></div>
-			<div id = "myseedmoney">{{myseed}}</div>
-		</div>
-		
-		<div id = "waitseedbox">
-			<div id = "waitseedtitle">대기 씨드<br><label class = "font">출금, 구매, 입찰중인 씨드</label></div>
-			<div id = "waitseedmoney">00,000</div>
-		</div>
-		<div id = "btnbox">
-			<a href="chargepopup" onclick="window.open(this.href, '_blank', 'width=868px,height=623px,toolbars=no,scrollbars=no'); return false;"><button id = "seedchargebtn" ><img src = "image/accountplus.svg" style = "position: relative; top:5px;">씨드머니 충전</button></a>
-			<button id = "seedwithdrawbtn"><img src = "image/accountminus.svg" style = "position: relative; top:5px;">씨드머니 출금</button>
-		
-		</div>
-		
-	</div> <!--end pocketboxdiv-->
-	
-	<div id = "assetboxdiv">
-		<div id = "assettitle">
-			<div id = "asseticondiv"><img src = "image/asseticon.svg"></div>
-			<div id = "assetlabeldiv">마이 에셋 </div>
-			<button id = "assettitlebtn">보유 재산권 </button>
-		</div>
-		
-		<div id = "evaluationbox">
-			<div id = "evaluationtitle">재산권 평가액</div>
-			<div id = "evaluationmoney">00,000</div>
-		</div>
-	
-		<div class = "assetbox">
-			<div class = "assettitle">평가손익</div>
-			<div class = "assetmoney" style = "color: #ff3e56;"><img src = "image/upprice.svg" class = "upanddown">0,000</div>
-		</div>
-		
-		<div class = "assetbox">
-			<div class = "assettitle">재산권 구매원금</div>
-			<div class = "assetmoney">00,000</div>
-		</div>
-		
-		<div class = "assetbox" style = "border:none;">
-			<div class = "assettitle">재산권 수입<label class = "font">(20년 12월 기준)<br>연 0%</label></div>
-			<div class = "assetmoney" style = "color: #1cb97c;">00,000</div>
-		</div>
-	</div> <!--end assetboxdiv-->
-	
-	<div id = "btndiv">
-		<a href = "#"><button id = "up"></button></a>
-		<button id = "chat"></button>
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#" style = "color:#1cb97c;">마이페이지</a>
+				<ul style = "left: -50px;">
+					<li><a href = "#">마이포켓</a></li>
+					<li><a href = "#">마이씨드</a></li>
+					<li><a href = "mypage.htm">회원정보</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div> <!—end tapdiv—>
+
+	<div id = "memberdiv">
+		<div id = "logindiv"><label id = "name">{{name}}</label>님 &nbsp;&nbsp;&nbsp;| </div>
+		<div id = "alarmdiv"><button id = "alarm"></button></div>
+	</div> <!--end logindiv-->
+</div> <!--end toptapdiv-->
+
+<div id = "accountboxdiv">
+	<div id = "accountbox">
+		<div id = "namediv"><div id = "namelabel"><label style = "font-weight: bold; margin-right: 5px; text-decoration: underline; text-underline-position: under;">{{name}}</label>시드너님</div></div>
+
+		<div id = "accountregi"><button id = "accountbtn">농협 3020000002066 </button></div>
 	</div>
-	
+</div> <!--end accountboxdiv-->
+
+<div id = "pocketboxdiv">
+	<div id = "pockettitle">
+		<div id = "pocketicondiv"><img src = "image/pocketicon.svg"></div>
+		<div id = "pocketlabeldiv">마이 포켓</div>
+		<button id = "pockettitlebtn">거래내역</button>
+	</div>
+
+	<div id = "myseedbox">
+		<div id = "myseedtitle">마이씨드<br><label class = "font">사용 가능 + 대기금</label></div>
+		<div id = "myseedmoney">{{myseed}}</div>
+	</div>
+
+	<div id = "waitseedbox">
+		<div id = "waitseedtitle">대기 씨드<br><label class = "font">출금, 구매, 입찰중인 씨드</label></div>
+		<div id = "waitseedmoney">49,900</div>
+	</div>
+	<div id = "btnbox">
+		<a href="chargepopup" onclick="window.open(this.href, '_blank', 'width=868px,height=623px,toolbars=no,scrollbars=no'); return false;"><button id = "seedchargebtn" ><img src = "image/accountplus.svg"><label  style = "position: relative; top:-5px;">씨드머니 충전</label></button></a>
+		<button id = "seedwithdrawbtn"><img src = "image/accountminus.svg"><label  style = "position: relative; top:-5px;">씨드머니 출금</label></button>
+
+	</div>
+
+</div> <!--end pocketboxdiv-->
+
+<div id = "assetboxdiv">
+	<div id = "assettitle">
+		<div id = "asseticondiv"><img src = "image/asseticon.svg"></div>
+		<div id = "assetlabeldiv">마이 에셋 </div>
+		<button id = "assettitlebtn" onclick = "location.href = 'myasset'">보유 품종권 </button>
+	</div>
+
+	<div id = "evaluationbox">
+		<div id = "evaluationtitle">재산권 평가액</div>
+		<div id = "evaluationmoney">419,900</div>
+	</div>
+
+	<div class = "assetbox">
+		<div class = "assettitle">평가손익</div>
+		<div class = "assetmoney" style = "color: #ff3e56;"><img src = "image/upprice.svg" class = "upanddown">58,000</div>
+	</div>
+
+	<div class = "assetbox">
+		<div class = "assettitle">재산권 구매원금</div>
+		<div class = "assetmoney">361,000</div>
+	</div>
+
+	<div class = "assetbox" style = "border:none;">
+		<div class = "assettitle">재산권 수입<label class = "font">(20년 12월 기준)<br>연 0%</label></div>
+		<div class = "assetmoney" style = "color: #1cb97c;">121,000</div>
+	</div>
+</div> <!--end assetboxdiv-->
+
+<div id = "footer">
+	<img src = "image/footerlogo.svg"><br>
+	<label class = "footerlabel" style = "color: #1cb97c; position: relative; top:10px;">국내 종자 시장의 미래를 위한 첫걸음, 시드닝<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:40px;">시드닝 고객센터 02-0000-0000  |  admin@seedning.co.kr<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:80px;">(주)시드닝<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:90px;">대표자 : 이연정  |  사업자등록번호 : 000-00-00000  |  통신판매업신고 : 제 0000-서울강남-00000호<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:100px;">서울특별시 강남구 테헤란로<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:180px;">이용약관  |  개인정보처리방침<br></label>
+	<img src = "image/footerfacebook.svg" style = "position: relative; top:155px; left:900px;">
+	<img src = "image/footerblog.svg" style = "position: relative; top:158px; left:930px;">
+</div>
+
+<div id = "btndiv">
+	<a href = "#"><button id = "up"></button></a>
+	<button id = "chat"></button>
+</div>
+
 </body>
 </html>

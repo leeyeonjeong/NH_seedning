@@ -9,6 +9,7 @@ import com.NH.seedning.Auction.repository.SeedRepository;
 import com.NH.seedning.Auction.service.AuctionService;
 import com.NH.seedning.Auction.service.SeedService;
 import com.NH.seedning.User.model.SessionUser;
+import com.NH.seedning.User.model.User;
 import com.NH.seedning.User.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,13 +66,14 @@ public class AuctionController {
     public String dis_auction_detail_ing(@PathVariable(name="id") Long id, Model model) {
         Seed seed = seedRepository.findById(id).get();
         List<AuctionDto> auctionDto = auctionService.getAuctionList(seed);
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        SessionUser sessionUser = (SessionUser) httpSession.getAttribute("user");
+        User user = userRepository.findById(sessionUser.getId()).get();
         model.addAttribute("seed", seed);
-        model.addAttribute("user", user);
+        model.addAttribute("user", sessionUser);
         model.addAttribute("auctionDto", auctionDto);
         httpSession.setAttribute("seedid", id);
 
-        System.out.println("#############################"+auctionDto);
+        model.addAttribute("myseed", user.getMyseed());
 
         return "auction/auction_detail_ing";
     }

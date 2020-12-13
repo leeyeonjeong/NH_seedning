@@ -4,20 +4,13 @@
 	<meta charset="utf-8">
 	<title>AUCTION</title>
 	<style>
-		body{width:1920px; height:2220px; margin: 0 auto;}
+		body{width:1920px; height:2370px;}
 
-		#notificationdiv{width: 1920px; height: 60px; margin: 0 auto; background-color: #222222;}
-		#announcediv{width: 500px; height: 60px; display: table; margin-left: 40px; float: left;}
-		#announceimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
-		#announcelabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
-		#detaildiv{width: 130px; height: 60px; display: table; margin-right: 50px; float: right;}
-		#detaillabel{font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:-0.8px; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
-		#detailimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
-
-		#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9;}
+		#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9; background-color: #ffffff;}
 		#logodiv{width: 150px; height: 100px; display: table; margin-left: 300px; float: left;}
 		#logoimg{width: 150px; height: 30px; text-align: center; display: table-cell; vertical-align: middle;}
-		#tapdiv{width: 900px; height: 100px; display: table; margin-left: 255px; float: left;}
+		#tapdiv{width: 600px; height: 100px; display: table; margin-left: 255px; float: left;}
+
 
 		#mainmenu{list-style-type:none; width: 600px; height: 100px;}
 		#mainmenu li{float: left; position: relative;margin: 15px 80px 0px 0px;}
@@ -32,13 +25,12 @@
 		#mainmenu li:hover ul{opacity: 1;}
 		#mainmenu li:checked ul{opacity: 1;}
 
-		#memberdiv{width: 200px; height: 100px; display: table; float: left; margin-right: 50px; float: right;}
-		#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle;}
-		#login{width: 83px; height: 40px; border-radius: 20px; border: solid 1px #e9e9e9; display: table;  outline: none; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:-0.7px; letter-spacing: -1px; color: #222222; }
-		#joindiv{width: 97px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; margin-left: 10px;}
-		#join{width: 97px; height: 40px; border-radius: 20px; background-color: #1cb97c; display: table; border: none; outline: none; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:-0.7px; letter-spacing: -1px; color: #ffffff;}
+		#memberdiv{width: 200px; height: 100px; display: table; float: left; float: right;}
+		#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #6e6e6e;}
+		#alarmdiv{width: 100px; height: 100px; text-align: left; display: table-cell; vertical-align: middle;}
+		#alarm{width: 24px; height: 24px; background-color: transparent; background-image: url("image/alarmicon.svg"); border: none; outline: none; margin-top: 10px; margin-left: 3px;}
 
-		#seedboxdiv{width: 1320px; height: 420px; margin: 60px auto 0px;}
+		#seedboxdiv{width: 1320px; height: 380px; margin: 60px auto 0px;}
 		#seedphotodiv{width:300px; height: 300px; background-color: #f5f5f5; float: left; background-image: url("image/auction_ing_hover_4.png");}
 		#companyname{height: 28px; border-radius: 5px; background-color: #1cb97c; text-align: center; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #ffffff; padding-left: 7px; padding-right: 7px; margin-left: 20px;}
 		#seedname{width:950px; float: left; padding-left: 20px; margin-top: 20px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 48px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:0.94; letter-spacing: -2.3px; color: #222222; float: left;}
@@ -47,32 +39,31 @@
 		.left{width:80px; height: 25px; float: left; text-align: left; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; margin-bottom: 10px;}
 		.right{width:200px; height: 25px; float: right; text-align: right; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #000000; margin-bottom: 10px;}
 		#opentime{width:300px; height: 25px;font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; float: left; margin-top: 80px; margin-left: 27px;}
-		#rightbox{width:300px; height: 100px;float: right; text-align: right; margin-top: 15px;}
-		.left{width:100px; height: 25px; float: left; text-align: left; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; margin-bottom: 10px;}
-		.right{width:200px; height: 25px; float: right; text-align: right; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #000000; margin-bottom: 10px;}
 		#progressbardiv{width: 1320px; height: 10px; margin: 0 auto; background-color: #ffffff;}
 		#progressbar{height: 10px; background-color: #1cb97c;}
 		#progressdiv{width: 1320px; height: 25px; margin:8px auto 0px;}
 		#totalpro{width:95px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; float: left;}
 		#currentpro{width:130px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; float: left; text-align: right;}
-		#percent{width:130px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #1cb97c; float: right; text-align: right; position: relative; top:-10px;}
+		#percent{width:130px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #1cb97c; float: right; text-align: right; margin-top: -10px;}
 
-		#contenttapdiv{width:860px; height: 60px; margin-top: 95px; margin-left:300px; float: left;}
+		#contenttapdiv{width:860px; height: 60px; margin-top: 95px; margin-left:-220px; float: left;}
 		.tap{display: none;}
 		.tap + label{width: 420px; height: 60px; float: left; text-align: center; border: none; border-bottom: solid 1px #e9e9e9; outline:none; background-color: transparent; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.14px; color: #6e6e6e;}
-		.tap:checked + label{border-bottom: solid 4px #222222; color: #222222;}
-		#contentboxdiv{width: 860px; height: 700px; margin-top: 195px; margin-left:300px;}
-		#biddingbox{width: 870px; height: 700px;}
-		#biddingtitle{width: 870px; height: 60px; background-color: #1cb97c;}
+		.tap:checked + label{border-bottom: solid 4px #222222; color: #222222; font-weight: bold;}
+
+		#contentboxdiv{width: 840px; height: 700px; margin-top: 55px; margin-left:300px; float: left; }
+
+		#biddingbox{width: 840px; height: 700px; visibility: visible; border: solid 1px #d8d8d8;}
+		#biddingtitle{width: 840px; height: 60px; background-color: #1cb97c;}
 		#titlepricediv{width:320px; height: 60px; padding-left: 30px; display: table; float: left;}
 		#titleprice{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; display: table-cell; vertical-align: middle;}
 		#titlenumdiv{width:135px; height: 60px;display: table; float: left; text-align: center;}
 		#titlenum{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; display: table-cell; vertical-align: middle;}
 		#titleresultdiv{width:320px; height: 60px; padding-right: 30px; display: table; float: left; text-align: right;}
 		#titleresult{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; display: table-cell; vertical-align: middle;}
-		#biddingcontent{width:870px; height: 580px; border-bottom:solid 1px #e9e9e9; overflow-y: auto;}
+		#biddingcontent{width:840px; height: 580px; border-bottom:solid 1px #e9e9e9; overflow-y: auto;}
 		.resultture{background-color: #f3fbf8;}
-		.bidding{width: 850px; height: 43px;}
+		.bidding{width: 840px; height: 43px;}
 		.conpricediv{width:320px; height: 23px; padding-left: 30px; display: table; float: left;}
 		.conprice{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.9px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
 		.connumdiv{width:135px; height: 23px;display: table; float: left; text-align: center;}
@@ -83,59 +74,91 @@
 		.partsuccessful{color: #1f4dc2;}
 		#biddingtotal{width: 870px; height: 60px;}
 		#totalpricediv{width:320px; height: 60px; padding-left: 30px; display: table; float: left;}
-		#totalprice{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; display: table-cell; vertical-align: middle;}
+		#totalprice{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; display: table-cell; vertical-align: middle;}
 		#totalnumdiv{width:135px; height: 60px;display: table; float: left; text-align: center;}
-		#totalnum{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; display: table-cell; vertical-align: middle;}
+		#totalnum{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; display: table-cell; vertical-align: middle;}
 		#ressetdiv{width:320px; height: 60px; padding-right: 30px;float: left; text-align: right;}
 		#resetbtn{width: 109px; height: 40px; border-radius: 24px; border: solid 1px #e9e9e9; background-color: transparent; margin-top: 12px; font-family: 'Noto Sans CJK KR'; font-size: 15px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222;}
 
-		#infobox{width: 850px; height: 700px; background-color: #18A29B; position: relative; top:-700px; visibility: hidden;}
+		#infobox{width: 850px; height: 700px;  position: relative; top:-700px; visibility: hidden;}
+		#plantinfo{width: 840px; height: 420px; border: solid 1px #d8d8d8;}
+		#planttitlediv{width: 810px; height: 45px; background-color: #1cb97c; padding-left: 30px; padding-top: 15px;}
+		#planttitle{font-family: 'Noto Sans CJK KR'; font-size: 20px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; }
+		#plantinfodiv{width: 470px; height: 300px; margin-top: 40px; margin-left: 30px; float: left;}
+		#plantnameinfo{font-family: 'Noto Sans CJK KR'; font-size: 48px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #222222;}
+		#cateinfo{font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #6e6e6e; margin-top: 10px;}
+		#plantcon{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #6e6e6e; margin-top: 15px;}
+		#plantgraphdiv{width: 300px; height: 300px; margin-top: 40px; float: right;}
+		#graph{width:170px; height: 170px; margin-left: 30px;}
+		#plantresult{width:300px; height: 150px; margin-top: 40px;}
+		.line{width: 300px; height: 30px; }
+		.list{width:30px; height: 30px; float: left;}
+		.listdot{ width: 14px; height: 14px; border-radius: 50px;}
+		.country{width: 90px; height: 30px; float: left;}
+		.countryname{font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #6e6e6e; position: relative; top:-5px;}
+		.graphper{width: 50px; height: 30px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #3f3f3f; position: relative; top:-5px; float: right; right: 20px;}
+		#companyinfo{width: 840px; height: 600px; border: solid 1px #d8d8d8; margin-top: 40px;}
+		#compatitlediv{width: 810px; height: 45px; background-color: #1cb97c; padding-left: 30px; padding-top: 15px;}
+		#compatitle{font-family: 'Noto Sans CJK KR'; font-size: 20px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; }
+		#companyinfodiv{width: 470px; height: 300px; margin-top: 40px; margin-left: 30px; float: left;}
+		#cplantnameinfo{font-family: 'Noto Sans CJK KR'; font-size: 48px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #222222;}
+		#tablediv{width: 780px; height: 210px; border: solid 1px #d8d8d8; margin-top: 25px;}
+		.tableline{width:780px; height: 40px; border-bottom : solid 1px #d8d8d8;}
+		.tableright{width:75px; height: 35px; border-right: solid 1px #d8d8d8; padding-left: 20px; padding-top: 5px; background-color: #f5f5f5; float: left;}
+		.rightlabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #6e6e6e;}
+		.tableleft{width:658px; height: 35px; border:none; padding-left: 20px; padding-top: 5px; float: left;}
+		.leftlabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #3f3f3f;}
+		.haveplant{width:110px; height: 100px; float: left; margin-top: 15px;}
+		.hplantname{width: 110px; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #3f3f3f; text-align: center; margin-top: 10px;}
+		#cominfo{width: 780px; height: 120px; margin-top: 12px; font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.94px; color: #6e6e6e;}
 
-
-		#orderdiv{width: 420px; height: 560px; box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05); border: solid 0.5px #6e6e6e; background-color: #ffffff; float: right; position: relative; bottom:800px; right:300px;}
-		#orderboxtitle{width: 420px; height: 80px; border-bottom: solid 1px #e9e9e9; }
-		#orderboxtitlelabel{width: 100px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: center; position: relative; top:20px; left:30px;}
-		#useseedmoneydiv{width: 420px; height: 25px; margin-top: 20px;float: left;}
+		#orderdiv{width: 420px; height: 580px; box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05); border: solid 0.5px #6e6e6e; background-color: #ffffff; float: right; margin-right: 300px;}
+		#orderboxtitle{width: 420px; height: 50px; border-bottom: solid 1px #e9e9e9;}
+		#orderboxtitlelabel{width: 100px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: center; margin-top: 20px; margin-left: 30px;}
+		#useseedmoneydiv{width: 420px; height: 25px; margin-top: 20px;  margin-bottom: 20px;float: left;}
 		#useseedmoney{width: 150px; height: 25px; font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #3f3f3f; margin-left: 30px;}
 		.formclass{width: 340px; height: 60px;}
-		#useedmoney{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.9px; color: #1cb97c; float:right; position: relative; top:-25px; right:38px;}
-		#moneybox{width: 340px; height: 60px; background-color: #f2f2f2; margin-top: 10px; margin-left: 30px; display: table; text-align: left; padding-left: 20px; position: relative; top:5px;}
-		#moneyboxtitle{width: 130px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #6e6e6e; float: left; position: relative; top:16px;}
-		#price{width:100px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: right; padding-right: 5px; border: none; background-color: transparent; float: left;}
-		.plusminubtndiv{width:100px; height: 55px; display: table-cell; vertical-align: middle; position: relative; top:5px; left:5px;}
-		.minususbtn{width:40px; height: 40px; float: left; background-image: url("image/minus.png"); position: relative; left:5px;}
-		.plusbtn{width:40px; height: 40px; float: left; background-image: url("image/plus.svg"); position: relative; left:4px;}
-
-
+		#useedmoney{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.9px; color: #1cb97c; float:right; margin-top: -25px; margin-right: 38px;}
+		#moneybox{width: 340px; height: 60px; background-color: #f2f2f2; margin-top: 25px; margin-left: 30px; display: table; text-align: left; padding-left: 20px;}
+		#moneyboxtitle{width: 130px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #6e6e6e; float: left; margin-top: 16px;}
+		#moneyboxlabel{width:100px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: right; padding-right: 5px; border: none; background-color: transparent; float: right; margin-right: 30px;}
+		.plusminubtndiv{width:100px; height: 55px; display: table-cell; vertical-align: middle; margin-top: 5px; margin-left: 5px;}
+		.minususbtn{width:40px; height: 40px; float: left; background-image: url("image/minus.png"); margin-left: 15px;}
+		.plusbtn{width:40px; height: 40px; float: left; background-image: url("image/plus.svg"); margin-right: 4px;}
 		#ratediv{width: 370px; height: 20px; margin-top: 14px; padding-left: 50px; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e;}
 		#ratepercent{width: 70px; height: 20px; float: right; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #1cb97c;}
 		#numdiv{width: 340px; height: 60px; background-color: #f2f2f2; margin-top: 30px; margin-left: 30px; display: table; text-align: left; padding-left: 20px;}
-		#numtitle{width: 130px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #6e6e6e; float: left; position: relative; top:16px;}
-		#quantity{width:100px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: right; padding-right: 5px; border: none; background-color: transparent; float: left;}
-		#weekselectdiv{width: 365px; height: 40px; margin: 20px auto 0px;}
+		#numtitle{width: 130px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #6e6e6e; float: left; margin-top: 16px;}
+		#weeklabel{width:100px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: right; padding-right: 5px; border: none; background-color: transparent; float: left;}
+		#weekselectdiv{width: 365px; height: 40px; margin: 20px 0px 0px 35px;}
 		.week{display: none;}
-		.week + label{width: 71px; height: 30px; border: solid 1px #d8d8d8; background-color: #ffffff; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e; padding-top: 8px; float:left; text-align: center;}
+		.week + label{width: 68px; height: 30px; border: solid 1px #d8d8d8; background-color: #ffffff; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e; padding-top: 8px; float:left; text-align: center;}
 		.week:checked + label{background-color: #1cb97c; color: #ffffff; border: solid 1px #1cb97c;}
 		#totalmoneydiv{width: 420px; height: 40px; margin : 40px auto 0px; }
 		#amount{width:100px; height: 40px; margin-left: 30px; float: left; font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #3f3f3f;}
 		#seedmoney{width: 200px; height: 40px; float: right; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #1cb97c; }
 		#seedmoney{width: 200px; height: 40px; float: right; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #1cb97c; }
-		#orderbtndiv{width: 420px; height: 50px; margin-top : 30px;}
+		#orderbtndiv{width: 420px; height: 50px; margin-top : 15px;}
 		#orderbtn{width: 360px ;height: 50px; border-radius: 25px; background-color: #1cb97c; margin-left: 30px; border: none; outline: none; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #ffffff;}
 
-		#precautiondiv{width: 430px; height: 400px; float:right; position: relative; bottom: 200px; left:120px;}
+		#precautiondiv{width: 430px; height: 400px; float:right; margin-right: 290px; margin-top: 20px;}
 		#precautiontitlediv{width: 420px; height: 45px; border-bottom: solid 2px #222222;}
-		#precautiontitle{width: 100px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: center; position: relative; top:5px;}
+		#precautiontitle{width: 100px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: center; margin-top: 5px;}
 		#precaution{width: 430px; height: 300px; margin-top: 15px; font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #3f3f3f; margin-left: 3px;}
 
-		#footer{width: 1620px; height: 390px; background-color: #f5f5f5; position: relative; top:240px; padding-left: 310px; padding-top: 60px;}
-		.footerlabel{font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height: 1.67px; letter-spacing: -0.3px;}
-
-		#btndiv{width: 50px; height: 120px; float: right; position:fixed;bottom:10px;right:10px;}
+		#btndiv{width: 50px; height: 120px; float: left; position:fixed; bottom:10px; left:1790px;}
 		#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
 		#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
+
+		#footer{width: 1620px; height: 390px; background-color: #f5f5f5; margin-top: 1520px; padding-left: 300px; padding-top: 60px;}
+		.footerlabel{font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height: 1.67px; letter-spacing: -0.3px;}
 	</style>
+
 	<script language="javascript">
+		function height(height) {
+			document.getElementById("toptapdiv").style.height = height;
+		}
+
 		function tap_click(hidden,show){
 			var1 = document.getElementById(hidden);
 			var2 = document.getElementById(show);
@@ -162,23 +185,16 @@
 			return str.replace(/[^\d]+/g, '');
 		}
 
-		function change1(num){
-			var x  = document.form1;
-			var y = Number(x.price.value) + num;
-			if(y < 0) y = 0;
-			x.price.value = y;
+		function change1(number){
+			var num = document.getElementById("weeklabel")
+			var this_qty = Number(num.value);
+			var result = this_qty + number;
+
+			if(result < 0)
+				result = 0;
+			num.value = result;
 		}
 
-		function change2(num){
-			var x  = document.form2;
-			var y = Number(x.quantity.value) + num;
-			if(y < 0) y = 0;
-			x.quantity.value = y;
-		}
-
-		function height(height) {
-			document.getElementById("toptapdiv").style.height = height;
-		}
 	</script>
 </head>
 
@@ -190,24 +206,23 @@
 
 	<div id = "tapdiv">
 		<ul id = "mainmenu">
-			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">브랜드소개</a>
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">서비스소개</a>
 				<ul style = "left: -53px;">
-					<li><a href = "#">시드닝소개</a></li>
-					<li><a href = "#">이벤트</a></li>
+					<li><a href = "#">시드닝이란</a></li>
 				</ul>
 			</li>
 
-			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#"  style = "color:#1cb97c;">옥션</a>
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">옥션</a>
 				<ul  style = "left: -80px;">
-					<li><a href = "auction_early.html">예정된옥션</a></li>
-					<li><a href = "auction_ing.html">진행중인옥션</a></li>
-					<li><a href = "auction_end.html">마감된옥션</a></li>
+					<li><a href = "auction_early">예정된옥션</a></li>
+					<li><a href = "auction_ing">진행중인옥션</a></li>
+					<li><a href = "auction_end">마감된옥션</a></li>
 				</ul>
 			</li>
 
-			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">마켓</a>
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "/market_home">마켓</a>
 				<ul style = "left: -80px;">
-					<li><a href = "#">추천</a></li>
+					<li><a href = "/market_home">추천</a></li>
 					<li><a href = "#">판매가</a></li>
 					<li><a href = "#">최근 조회</a></li>
 					<li><a href = "#">관심</a></li>
@@ -225,8 +240,8 @@
 	</div> <!--end tapdiv-->
 
 	<div id = "memberdiv">
-		<div id = "logindiv"><button id = "login">로그인</button></div>
-		<div id = "joindiv"><button id = "join">회원가입</button></div>
+		<div id = "logindiv"><label id = "name">이주디</label>님 &nbsp;&nbsp;&nbsp;| </div>
+		<div id = "alarmdiv"><button id = "alarm"></button></div>
 	</div> <!--end logindiv-->
 </div> <!--end toptapdiv-->
 
@@ -239,17 +254,17 @@
 
 	<label id = "category">{{seed.classification}}류 &nbsp; &gt &nbsp; {{seed.cropname}}</label>
 
-	<div id = "opentime"><label id = "open">2020.12.13</label>&nbsp;오픈</div>
+	<div id = "opentime">2020.12.13 &nbsp; 오픈</div>
 
 	<div id = "rightbox">
 		<div class = "left">남은시간</div>
-		<div class = "right">00일 00시간 00분 00초</div>
+		<div class = "right">03일 14시간 22분 29초</div>
 
 		<div class = "left">옥션수량</div>
 		<div class = "right">{{seed.total}}주</div>
 
 		<div class = "left">시작가격</div>
-		<div class = "right" style = "#1cb97c;">{{seed.start}} 시드머니</div>
+		<div class = "right" style = "color: #1cb97c;">{{seed.start}} 시드머니</div>
 	</div>
 </div> <!--end seedboxdiv-->
 
@@ -278,11 +293,13 @@
 		<div id = "biddingcontent">
 			{{#auctionDto}}
 			<div class = "bidding resultture" style = "margin-top: 20px;">
-				<div class = "conpricediv"><div class = "conprice">{{price}}</div></div>
-				<div class = "connumdiv"><div class = "connum">{{quantity}}</div></div>
+				<div class = "conpricediv"><div class = "conprice">{{money}}</div></div>
+				<div class = "connumdiv"><div class = "connum">{{week}}</div></div>
 				<div class = "conresultdiv"><div class = "conresult successful">{{result}}</div></div>
 			</div>
 			{{/auctionDto}}
+
+			<br>
 
 			<div class = "bidding">
 				<div class = "conpricediv"><div class = "conprice">25,000</div></div>
@@ -307,14 +324,88 @@
 		<div id = "biddingtotal">
 			<div id = "totalpricediv"><div id = "totalprice">합계</div></div>
 			<div id = "totalnumdiv"><div id = "totalnum">2,808주</div></div>
-			<div id = "ressetdiv"><button id = "resetbtn"><img src = "image/reseticon.svg" style = "position: relative; top:4px;">새로고침</button></div>
+			<div id = "ressetdiv"><button id = "resetbtn"><img src = "image/reseticon.svg">새로고침</button></div>
 		</div> <!--end biddingtotal-->
 	</div> <!--end biddingbox-->
 
 	<div id = "infobox">
+		<div id = "plantinfo">
+			<div id = "planttitlediv"><div id = "planttitle">종자 정보</div></div>
 
-	</div>
+			<div id = "plantinfodiv">
+				<div id = "plantnameinfo">화이트베리</div>
+				<div id = "cateinfo">채소류&nbsp; &gt &nbsp; 딸기</div>
+				<div id = "plantcon">화이트베리는 국내에서 2016년 기준 전국 재배 면적이 약 500ha로 약 0.5만톤을 생산하여 그 중 200톤을 미국, 싱가포르, 중국, 독일 등 다양한 국가로 수출하였다. <br><br>국내에서 최초로 미국 펜실베니아에 종자 수출을 통해 연 1억원 이상의 지속적인 로열티 매출을 올리는 쾌거를 이루었다.</div>
+			</div>
 
+			<div id  = "plantgraphdiv">
+				<div id = "graph"><img src = "image/plantgraph.svg"></div>
+				<div id = "plantresult">
+					<div class = "line" >
+						<div class = "list"><div class = "listdot" style = "background-color: #1cb97c;"></div></div>
+						<div class = "country"><div class = "countryname">대한민국</div>
+
+						</div>
+						<div class = "graphper">70%</div>
+					</div>
+
+					<div class = "line">
+						<div class = "list"><div class = "listdot" style = "background-color: #6e6e6e;"></div></div>
+						<div class = "country"><div class = "countryname">미국</div>
+
+						</div>
+						<div class = "graphper">20%</div>
+					</div>
+
+					<div class = "line">
+						<div class = "list"><div class = "listdot" style = "background-color: #d8d8d8;"></div></div>
+						<div class = "country"><div class = "countryname">ETC</div>
+
+						</div>
+						<div class = "graphper">10%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id = "companyinfo">
+			<div id = "compatitlediv"><div id = "compatitle">회사 정보</div></div>
+
+			<div id = "companyinfodiv">
+				<div id = "cplantnameinfo">화이트베리</div>
+				<div id = "tablediv">
+					<div class = "tableline">
+						<div class = "tableright"><div class = "rightlabel">매출</div></div>
+						<div class = "tableleft"><div class = "leftlabel">18억 5000만</div></div>
+					</div>
+
+					<div class = "tableline">
+						<div class = "tableright"><div class = "rightlabel">순이익</div></div>
+						<div class = "tableleft"><div class = "leftlabel">7억 1500만</div></div>
+					</div>
+
+					<div class = "tableline" style = "height: 127px;">
+						<div class = "tableright" style = "height: 122px; border-bottom : solid 1px #d8d8d8;"><div class = "rightlabel">보유종자</div></div>
+						<div class = "tableleft" style = "height: 122px;">
+							<div class = "haveplant">
+								<img src = "image/companyinfo1.jpg" style = "margin-left: 22px;">
+								<div class = "hplantname">어텀크리스피</div>
+							</div>
+
+							<div class = "haveplant">
+								<img src = "image/companyinfo2.jpg" style = "margin-left: 25px;">
+								<div class = "hplantname">샤인피치</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id = "cominfo">
+					서울시드 주식회사는 종묘업계의 세계 인류기업인 일본 다끼이주식회사와 공동육성하여 고품질 종자의 육성, 개발 그리고 보급에 최선을 다하고 있습니다.<br><br>또한 앞선 육종기술과 농업기술을 도입시켜 농민들의 소득증대 및 경쟁력 향상에 기여하며 ‘세계 최고 품질의 우수종자 개발’이라는 작은 성과에 만족하지 않고 ‘세계 최고의 육종 기술 개발’로 농가 소득창출과 한국 농업의 진흥 및 발전을 시키는데 주역이 되겠습니다.
+				</div>
+			</div>
+		</div>
+	</div> <!--end infobox-->
 </div> <!--end contentboxdiv-->
 
 <form action="/auction_detail_ing" method="post">
@@ -325,31 +416,25 @@
 
 		<div id = "useseedmoneydiv">
 			<div id = "useseedmoney">사용가능 시드머니</div>
-			<div id = "useedmoney">{{user.myseed}} 시드머니</div>
+			<div id = "useedmoney">{{myseed}} 시드머니</div>
 		</div>
 
 		<div id = "moneybox">
-			<form name = "form1" class = "formclass">
-				<div id = "moneyboxtitle">입찰가격(1주)</div>
-				<input type = "text" id = "price" placeholder="0" size="3" name = "price" onkeyup="inputNumberFormat(this)">
+			<div id = "moneyboxtitle">입찰가격(1주)</div>
+			<input type = "text" id = "moneyboxlabel" value="0" size="3" name = "money" onkeyup="inputNumberFormat(this)">
+		</div>
+
+		<div id = "ratediv">입찰가격 대비 최근 1년 종자비율 수익률<label id = "ratepercent">11.2%</label></div>
+
+		<div id = "numdiv">
+			<div name = "form1" class = "formclass">
+				<div id = "numtitle">수량(주)</div>
+				<input type = "text" id = "weeklabel" value="0" size="3" name = "week" onkeyup="inputNumberFormat(this)">
 				<div class = "plusminubtndiv">
 					<div class = "minususbtn" onClick="change1(-1);"></div>
 					<div class = "plusbtn" onClick="change1(1);"></div>
 				</div>
-			</form>
-		</div>
-
-		<div id = "ratediv">입찰가격 대비 최근 1년 종자비율 수익률<label id = "ratepercent">00%</label></div>
-
-		<div id = "numdiv">
-			<form name = "form2" class = "formclass">
-				<div id = "numtitle">수량(주)</div>
-				<input type = "text" id = "quantity" placeholder="0" size="3" name = "quantity" onkeyup="inputNumberFormat(this)">
-				<div class = "plusminubtndiv">
-					<div class = "minususbtn" onClick="change2(-1);"></div>
-					<div class = "plusbtn" onClick="change2(1);"></div>
-				</div>
-			</form>
+			</div>
 		</div>
 
 		<div id = "weekselectdiv">
@@ -366,10 +451,11 @@
 		</div>
 
 		<div id = "orderbtndiv">
-			<button type="submit" id = "orderbtn">입찰주문</button>
+			<button id = "orderbtn">입찰주문</button>
 		</div>
 	</div> <!--end orderdiv-->
 </form>
+
 <div id = "precautiondiv">
 	<div id = "precautiontitlediv"><div id = "precautiontitle">유의사항</div></div>
 	<div id = "precaution">
@@ -380,7 +466,6 @@
 		<img src = "image/checkicon.svg" style = "margin-right: 3px;">옥션 마지막 날은 취소가 불가하며 재입찰 시 입찰 수량/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금액보다 높은 수량/금액만 입찰이 가능합니다.<br>
 		<img src = "image/checkicon.svg" style = "margin-right: 3px;">전체 옥션 수량 대비 30% 이상 수량으로 입찰하는 경우<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;입찰취소는 불가합니다.
 	</div>
-
 </div> <!--end precautiondiv-->
 
 <div id = "footer">
@@ -391,14 +476,13 @@
 	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:90px;">대표자 : 이연정  |  사업자등록번호 : 000-00-00000  |  통신판매업신고 : 제 0000-서울강남-00000호<br></label>
 	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:100px;">서울특별시 강남구 테헤란로<br></label>
 	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:180px;">이용약관  |  개인정보처리방침<br></label>
-	<img src = "image/footerfacebook.svg" style = "position: relative; top:155px; left:900px;">
-	<img src = "image/footerblog.svg" style = "position: relative; top:158px; left:930px;">
+	<img src = "image/footerfacebook.svg" style = "position: relative; top:155px; left: 1250px;">
+	<img src = "image/footerblog.svg" style = "position: relative; top:158px; left: 1300px;">
 </div>
 
 <div id = "btndiv">
 	<a href = "#"><button id = "up"></button></a>
 	<button id = "chat"></button>
 </div>
-
 </body>
 </html>

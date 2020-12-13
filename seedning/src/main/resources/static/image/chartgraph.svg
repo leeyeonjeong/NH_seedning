@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="341" height="252" viewBox="0 0 341 252">
+    <defs>
+        <linearGradient id="jtg05a5a5a" x1="50%" x2="50%" y1="-34.95%" y2="80.121%">
+            <stop offset="0%" stop-color="#1CB97C" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#1CB97C" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="knlf640uuc" x1="0%" x2="32.978%" y1="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="sdp4xdtihd" x1="100%" x2="66.505%" y1="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="9ko7ubjaje" x1="99.063%" x2="2.217%" y1="100%" y2="100%">
+            <stop offset="0%" stop-color="#1CB97C" stop-opacity="0"/>
+            <stop offset="19.116%" stop-color="#1CB97C"/>
+            <stop offset="84.413%" stop-color="#1CB97C"/>
+            <stop offset="100%" stop-color="#1CB97C" stop-opacity="0"/>
+        </linearGradient>
+        <path id="79zn3abm1b" d="M1.465 160.195l9.101-2.684c.351-.104.724-.11 1.078-.015l10.023 2.655c.112.03.22.069.326.117l9.624 4.437c.773.356 1.686.184 2.277-.429l7.561-7.842c.086-.09.18-.17.281-.242l8.406-5.975.06-.044 6.142-4.718c.628-.483 1.483-.549 2.178-.169l5.34 2.92c.294.161.624.246.96.246h4.634c.653 0 1.264.318 1.639.853l5.954 8.503c.374.534.986.853 1.638.853h3.072c.122 0 .243-.011.363-.034l11.855-2.191c.476-.088.967 0 1.383.246l9.272 5.49c.816.483 1.859.327 2.498-.374l4.414-4.845c.379-.416.916-.653 1.478-.653h4.2c.594 0 1.158-.265 1.538-.723l11.841-14.261c.226-.272.519-.479.85-.6l7.057-2.59c.221-.081.454-.123.69-.123h13.186c.23 0 .46.04.678.119l6.953 2.506c.487.175 1.024.155 1.497-.057l12.916-5.795c.17-.077.329-.176.471-.296l6.477-5.463c.2-.169.366-.376.486-.609l9.53-18.398c.275-.529.77-.908 1.353-1.034l6.912-1.498c.547-.118 1.118-.002 1.575.32l6.6 4.65c.324.228.573.548.715.918l6.8 17.706c.05.128.113.251.187.367l7.441 11.533c.163.253.38.465.637.622l5.887 3.6c.172.105.36.183.556.233l4.884 1.225c.573.144 1.18.027 1.658-.319l6.615-4.778c.182-.132.34-.293.469-.477l8.183-11.734c.037-.053.076-.104.118-.153l5.139-6.036c.38-.446.936-.703 1.523-.703h5.095c.336 0 .666.084.96.246l3.39 1.858c.295.161.626.246.962.246h3.535c.697 0 1.344-.363 1.707-.958l5.651-9.261c.117-.192.201-.403.249-.623l4.272-19.958V221.5l-283-.05v-61.255z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <text fill="#1CB97C" font-family="NotoSans-Bold, Noto Sans" font-size="16" font-weight="bold" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="187.064" y="247">2020.12</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="44.218" y="247">2020.10</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="120.204" y="247">20</tspan> <tspan x="136.228" y="247" font-family="AppleSDGothicNeo-Regular, Apple SD Gothic Neo">20.11</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="313.762" y="207">9,00</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="305.75" y="171">10,00</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="305.75" y="135">11,00</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="305.75" y="99">12,00</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="305.75" y="63">13,00</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSans, Noto Sans" font-size="16" letter-spacing="-.8" transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <tspan x="305.75" y="27">14,00</tspan>
+                    </text>
+                    <path stroke="#D8D8D8" stroke-width=".7" d="M213.749 221.45L213.5 1.55M142.749 220.45L142.5.55M69.374 221.45L69.25 1.55" opacity=".75" transform="translate(-330 -2269) translate(300 2140) translate(30 129)"/>
+                    <g transform="translate(-330 -2269) translate(300 2140) translate(30 129)">
+                        <use fill="url(#jtg05a5a5a)" xlink:href="#79zn3abm1b"/>
+                        <use fill="url(#knlf640uuc)" xlink:href="#79zn3abm1b"/>
+                        <use fill="url(#sdp4xdtihd)" xlink:href="#79zn3abm1b"/>
+                    </g>
+                    <path stroke="url(#9ko7ubjaje)" stroke-width="1.5" d="M1.465 160.195l5.611-1.655c2.634-.777 5.43-.816 8.085-.113l4.89 1.296c1.185.314 2.327.772 3.4 1.363l3.92 2.161c3.23 1.78 7.263 1.063 9.68-1.722l3.358-3.87c.78-.9 1.667-1.704 2.638-2.395l6.899-4.904c.15-.107.3-.217.446-.33l3.853-2.959c1.904-1.462 4.492-1.663 6.6-.51l.751.41c1.78.974 3.778 1.485 5.808 1.485 1.939 0 3.756.946 4.868 2.534l4.142 5.915c.772 1.103 2.034 1.76 3.38 1.76h.773c.915 0 1.827-.084 2.727-.25l5.89-1.09c3.566-.658 7.25-.003 10.37 1.844l2.578 1.527c2.272 1.345 5.176.91 6.954-1.041l1.025-1.126c1.292-1.418 3.12-2.225 5.039-2.225 1.907 0 3.715-.85 4.933-2.317l8.282-9.974c1.69-2.035 3.889-3.588 6.372-4.5l1.602-.587c1.656-.608 3.405-.919 5.169-.919h8.604c1.734 0 3.455.3 5.086.889l1.556.56c2.58.93 5.419.822 7.92-.3l8.09-3.63c1.274-.571 2.462-1.318 3.53-2.219l2.988-2.52c1.581-1.334 2.87-2.98 3.784-4.835l6.794-13.786c1.242-2.519 3.565-4.334 6.31-4.928 2.769-.6 5.663-.013 7.979 1.619l.336.237c2.503 1.763 4.406 4.25 5.454 7.127l4.907 13.466c.383 1.051.882 2.056 1.489 2.997l5.03 7.797c1.223 1.895 2.857 3.49 4.78 4.666l1.66 1.015c1.295.792 2.703 1.382 4.175 1.752l.82.205c1.929.484 3.973.091 5.584-1.073l3.04-2.196c1.365-.986 2.555-2.196 3.519-3.578l6.563-9.41c.275-.395.57-.777.882-1.144l3.215-3.776c1.343-1.577 3.31-2.486 5.382-2.486h.82c1.605 0 3.183.404 4.59 1.175 1.406.77 2.984 1.175 4.588 1.175h.14c1.606 0 3.096-.836 3.932-2.207l3.737-6.124c.88-1.442 1.51-3.022 1.863-4.674l3.81-17.795h0" transform="translate(-330 -2269) translate(300 2140) translate(30 129)"/>
+                    <path stroke="#D8D8D8" stroke-width="1.2" d="M0 221.5L283.5 221.5M284.5 1.5L284 221.5" opacity=".75" transform="translate(-330 -2269) translate(300 2140) translate(30 129)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

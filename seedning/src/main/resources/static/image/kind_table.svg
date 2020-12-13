@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="301" viewBox="0 0 340 301">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <path fill="#F5F5F5" d="M1 0H121V75H1zM1 75H121V150H1zM1 225H121V300H1zM1 150H121V225H1z" transform="translate(-770 -2220) translate(740 2140) translate(30 80)"/>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="20" y="44">연간수익률</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="20" y="119">PER</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="20" y="269">시가총액</tspan>
+                    </text>
+                    <text fill="#6E6E6E" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="20" y="194">상장주식수</tspan>
+                    </text>
+                    <path stroke="#D8D8D8" d="M.5.5H339.5V299.5H.5zM120.5 300.5L120 0M0 74L340 74M0 149L340 149M0 224L340 224" transform="translate(-770 -2220) translate(740 2140) translate(30 80)"/>
+                    <text fill="#3F3F3F" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="140" y="44">7.4%</tspan>
+                    </text>
+                    <text fill="#3F3F3F" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="140" y="119">11.2배</tspan>
+                    </text>
+                    <text fill="#3F3F3F" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="140" y="194">4,000주</tspan>
+                    </text>
+                    <text fill="#3F3F3F" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="18" letter-spacing="-.857" transform="translate(-770 -2220) translate(740 2140) translate(30 80)">
+                        <tspan x="140" y="269">46,800,000원</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -15,8 +15,8 @@ public class Auction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String price;
-    private String quantity;
+    private String money;
+    private String week;
     private String result;
 
     @ManyToOne
@@ -28,10 +28,10 @@ public class Auction {
     private User user;
 
     @Builder
-    private Auction(Long id, String price, String quantity, String result, Seed seed, User user) {
+    private Auction(Long id, String money, String week, String result, Seed seed, User user) {
         this.id = id;
-        this.price = price;
-        this.quantity = quantity;
+        this.money = money;
+        this.week = week;
         this.result = result;
         this.seed = seed;
         this.user = user;

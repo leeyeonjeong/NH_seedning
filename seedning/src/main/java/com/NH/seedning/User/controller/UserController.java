@@ -68,7 +68,10 @@ public class UserController {
     }
 
     @GetMapping("chargepopup")
-    public String dis_chargepopup() {
+    public String dis_chargepopup(Model model) {
+        SessionUser sessionUser = (SessionUser) httpSession.getAttribute("user");
+        User user = userRepository.findById(sessionUser.getId()).get();
+        model.addAttribute("myseed", user.getMyseed());
         return "mypage/chargepopup";
     }
 

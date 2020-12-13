@@ -40,6 +40,6 @@ public class RestTemplateTestController {
         User user = userRepository.findById(sessionUser.getId()).get();
         user.setMyseed(Long.valueOf(user.getMyseed()+Long.valueOf(moneyinput)));
         userRepository.save(user);
-        return "redirect:/";
+        return "충전이 완료되었습니다.";
     }
 }
