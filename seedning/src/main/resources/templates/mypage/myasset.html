@@ -1,0 +1,364 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MYPAGE</title>
+<style>
+	body{width:1920px; height:  3157px; margin: 0 auto;}
+	#notificationdiv{width: 1920px; height: 60px; margin: 0 auto; background-color: #222222;}
+	#announcediv{width: 500px; height: 60px; display: table; margin-left: 40px; float: left;}
+	#announceimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
+	#announcelabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
+	#detaildiv{width: 130px; height: 60px; display: table; margin-right: 50px; float: right;}
+	#detaillabel{font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:-0.8px; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
+	#detailimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
+	
+	#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9;}
+	#logodiv{width: 150px; height: 100px; display: table; margin-left: 300px; float: left;}
+	#logoimg{width: 150px; height: 30px; text-align: center; display: table-cell; vertical-align: middle;}
+	#tapdiv{width: 600px; height: 100px; display: table; margin-left: 255px; float: left;}
+	
+	#mainmenu{list-style-type:none; width: 600px; height: 100px;}
+	#mainmenu li{float: left; position: relative;margin: 15px 80px 0px 0px;}
+	#mainmenu li a{display: block; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; text-decoration: none;}
+	#mainmenu li:hover > a{color: #1cb97c;}
+	#mainmenu ul{list-style-type:none; margin: 0; position: absolute; width: 200px; opacity: 0;}
+	#mainmenu ul li{float: none;}
+	#mainmenu ul li a{font-size: 14px; text-align: center; font-weight: normal;}
+	#mainmenu ul li:hover a{color: #1cb97c;}
+	#mainmenu li:hover ul{opacity: 1;}
+	
+	#memberdiv{width: 200px; height: 100px; display: table; float: left; float: right;}
+	#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.7px; color: #6e6e6e;}
+	#alarmdiv{width: 100px; height: 100px; text-align: left; display: table-cell; vertical-align: middle;}
+	#alarm{width: 24px; height: 24px; background-color: transparent; background-image: url("image/alarmicon.svg"); border: none; outline: none; margin-top: 10px; margin-left: 3px;}
+	
+	#holdmoneybox{width: 1320px; height: 480px; margin: 65px auto 0px; }
+	#holdmoneyboxtitle{width: 200px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 32px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.5px; color: #222222;}
+	#threemonthbox{width: 540px; height: 400px; border: solid 1px #d8d8d8; background-color: #ffffff; margin-top: 40px; float: left; text-align: center;}
+	#threemonthboxtitle{width: 510px; height: 45px; background-color: #1cb97c; padding-left: 30px; padding-top: 15px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff;}
+	#graphdiv{width:480px; height: 200px; margin-top: 69px; margin-left: 45px;}
+	.yeardiv{width:120px; height: 200px; float: left;}
+	.yeargraphup{width:40px; background-color: #ff3e56;}
+	.yeargraphdown{width:40px; background-color: #1f4dc2; position: relative; top:50%; -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg);}
+	#yearbox{width:480px; height: 40px;  margin-top: 35px; margin-left: 45px;}
+	.yearlabel{width:120px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; text-align: left; float:left;}
+	#profitdiv{width: 120px; height: 76px; box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.05); border: solid 0.5px #e9e9e9; border-radius: 15px; background-color: #ffffff; position: relative; top:-330px; left:380px;}
+	#prifittitle{width: 120px; height: 20px; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; margin-top: 5px;}
+	#prifitmoney{width: 120px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #1cb97c;margin-top: 8px;}
+	
+	#profitpercnetbox{width: 730px; height: 400px; border: solid 1px #d8d8d8; background-color: #ffffff; margin-top: 40px; margin-left: 40px;float: left;}
+	#profitpercnetitle{width: 700px; height: 45px; background-color: #1cb97c; padding-left: 30px; padding-top: 15px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff;}
+	
+	#profitpercnetgraphdiv{width: 730px; height: 320px; margin-top: 20px;}
+	#profitbuttondiv{width:320px; height: 50px; float: right; margin-right: 20px;}
+	input[type = radio] {display: none;}
+	input[type = radio] + label{width: 60px; height: 30px; float: left; border-radius: 15px; padding-top: 7px; background-color: #f2f2f2; height: 30px; font-family: 'Noto Sans CJK KR';font-size: 14px;font-weight: normal;font-stretch: normal;font-style: normal;line-height: normal;letter-spacing: -0.61px;text-align: center; color : #6e6e6e; margin-right: 20px;}
+	input[type = radio]:checked + label{background-color: #1cb97c; color: #ffffff;}
+	#profitgraph{width: 660px; height: 235px; background-color: #BC5C5E; position: relative; top:60px; left: 40px;}
+	
+
+	#investmentdiv{width: 1320px; height: 245px; margin: 60px auto 0px;}
+	#inverstmenttitle{width: 150px; height: 35px; font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #222222;}
+	.investbox{width: 260px; height: 180px; border: solid 1px #d8d8d8; background-color: #ffffff; margin-top: 33px; float:left; margin-right: 40px;}
+	.investtitle{width: 230px; height: 30px; margin-top: 30px; margin-left: 21px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e;}
+	.font{font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.71px; color: #6e6e6e;}
+	.investmoney{width: 200px; height: 50px; margin-top: 40px; margin-left: 21px; font-family: 'Noto Sans CJK KR'; font-size: 36px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222;}
+	
+	#propertydiv{width: 1320px; height: 245px; margin: 60px auto 0px;}
+	#propertytitle{width: 150px; height: 35px; font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #222222;}
+	.upanddown{width: 36px; height: 36px; position: relative; top:5px; margin-right: 3px;}
+	
+	#holdmoneylist{width: 1320px; height: 700px; margin: 60px auto 0px;}
+	#holdmoneylisttitle{width: 150px; height: 35px; font-family: 'Noto Sans CJK KR'; font-size: 27px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #222222; float: left;}
+	#searchdiv{float: right;}
+	select{width:80px;height:20px; border-style : none; -webkit-appearance: none;-moz-appearance: none;appearance: none;}
+	select::-ms-expand {display: none;}
+	.select_font{font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.3px; color: #3f3f3f; background: url("image/select.svg")no-repeat 99% 10%;}
+	#holdmoney{width: 1320px; height: 600px; border: solid 1px #d8d8d8; background-color: #ffffff; margin-top: 49px;}
+	#holdtitlebox{width: 1320px; height: 60px; background-color: #1cb97c;}
+	#holdtitle{width:1320px; height: 60px; padding-left: 30px; display: table; float: left;}
+	#titlenamediv{width:520px; height: 60px; padding-left: 30px; display: table; float: left;}
+	#titlename{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; margin-top: 15px;}
+	.holdpercnetdiv{width:200px; height: 60px; padding-left: 30px; display: table; float: left;}
+	.holdpercnet{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; margin-top: 15px;}
+	#holdcontentbox{width:1330px; height: 540px; border-bottom:solid 1px #e9e9e9; overflow-y: auto;}
+	.contentnamediv{width:520px; height: 60px; padding-left: 30px; display: table; float: left;}
+	.contentname{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #3f3f3f; margin-top: 15px;}
+	.contentpercnetdiv{width:200px; height: 60px; padding-left: 30px; display: table; float: left;}
+	.contentpercnet{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #3f3f3f; margin-top: 15px;}
+	.uppercent{color: #ff3e56;}
+	.downpercent{color: #1f4dc2;}
+	.current{color: #1cb97c;}
+	
+	#btndiv{width: 50px; height: 120px; float: right; position:fixed;bottom:10px;right:10px;}
+	#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
+	#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
+	
+	
+</style>
+</head>
+
+<body>
+	<div id = "notificationdiv">
+		<div id = "announcediv">
+			<div id = "announceimg"><img src = "image/accounceicon.svg"></div>
+			<div id = "announcelabel">매일 오전 10시 / 오후 4시 씨드닝에서 새로운 옥션이 시작됩니다.</div>
+		</div>
+		
+		<div id = "detaildiv">
+			<div id = "detaillabel">자세히 알아보기</div>
+			<div id = "detailimg"><img src = "image/nexticon_small.svg"></div>
+		</div>
+	</div> <!--end notificationdiv-->
+	
+	<div id = "toptapdiv">
+		<div id = "logodiv">
+			<div id = "logoimg"><img src = "image/logo.svg"></div>
+		</div> <!--end logodiv-->
+			
+		<div id = "tapdiv">
+			<ul id = "mainmenu">
+					<li><a href = "#">브랜드소개</a>
+						<ul style = "left: -53px;">
+							<li><a href = "#">시드닝소개</a></li>
+							<li><a href = "#">이벤트</a></li>
+						</ul>
+					</li>
+					
+					<li><a href = "#">옥션</a>
+						<ul  style = "left: -80px;">
+							<li><a href = "auction_early">예정된옥션</a></li>
+							<li><a href = "auction_ing">진행중인옥션</a></li>
+							<li><a href = "auction_end">마감된옥션</a></li>
+						</ul>
+					</li>
+					<li><a href = "#">마켓</a>
+						<ul style = "left: -80px;">
+							<li><a href = "#">추천</a></li>
+							<li><a href = "#">판매가</a></li>
+							<li><a href = "#">최근 조회</a></li>
+							<li><a href = "#">관심</a></li>
+						</ul>
+					</li>
+					<li><a href = "#" style = "color: #1cb97c;">마이페이지</a>
+						<ul style = "left: -50px;">
+							<li><a href = "#">마이포켓</a></li>
+							<li><a href = "#">마이씨드</a></li>
+							<li><a href = "mypage">회원정보</a></li>
+						</ul>
+					</li>
+				</ul>
+		</div> <!--end tapdiv-->
+		
+		<div id = "memberdiv">
+			<div id = "logindiv"><label id = "name">김원지</label>님 &nbsp;&nbsp;&nbsp;| </div>
+			<div id = "alarmdiv"><button id = "alarm"></button></div>
+		</div> <!--end logindiv-->
+	</div> <!--end toptapdiv-->
+	
+	<div id = "holdmoneybox">
+		<div id = "holdmoneyboxtitle">보유재산권</div>
+		
+		<div id = "threemonthbox">
+			<div id = "threemonthboxtitle">최근 3개년 재산권 수입(씨드머니)</div>
+			<div id = "graphdiv">
+				<hr style = "width:480px; height:0.8px; border:none; background-color:#d8d8d8; position: relative; top:50%; left:-20px;">
+				<div class = "yeardiv">
+					<div class = "yeargraphup" style = "height: 30%;  margin-top: 32px;"></div>
+				</div>
+				
+				<div class = "yeardiv">
+					<div class = "yeargraphdown" style = "height: 20%; margin-top: -9px;"></div>
+				</div>
+				
+				<div class = "yeardiv">
+					<div class = "yeargraphup" style = "height: 60%; margin-top: -28px;"></div>
+				</div>
+				
+				<div class = "yeardiv">
+					<div class = "yeargraphup" style = "height: 30%; margin-top: 32px;"></div>
+				</div>
+			</div>
+			<div id = "yearbox">
+				<div class = "yearlabel">2017년</div>
+				<div class = "yearlabel">2018년</div>
+				<div class = "yearlabel">2019년</div>
+				<div class = "yearlabel">2020년</div>
+			</div>
+			
+			<div id = "profitdiv">
+				<div id = "prifittitle">재산권 수입</div>
+				<div id = "prifitmoney">00,000</div>
+			</div>
+		</div>
+		
+		<div id = "profitpercnetbox">
+			<div id = "profitpercnetitle">재산권 수익률</div>
+			<div id = "profitpercnetgraphdiv">
+				<div id = "profitbuttondiv">
+					<input type = "radio" id = "1"><label for = "1" style = "width: 60px;">6개월</label>
+					<input type = "radio" id = "2"><label for = "2" style = "width: 60px;">6개월</label>
+					<input type = "radio" id = "3"><label for = "3" style = "width: 60px;">6개월</label>
+					<input type = "radio" id = "4"><label for = "4" style = "width: 60px;">6개월</label>
+				</div>
+				
+				<div id = "profitgraph">
+				
+				</div>
+			</div>
+		</div>
+	</div> <!--end holdmoneybox-->
+	
+	<div id = "investmentdiv">
+		<div id = "inverstmenttitle">투자금액</div>
+		
+		<div class = "investbox">
+			<div class = "investtitle">구매금액<label class = "font">(누적)</label></div>
+			<div class = "investmoney">00,000</div>
+		</div>
+		
+		<div class = "investbox">
+			<div class = "investtitle">판매금액<label class = "font">(누적)</label></div>
+			<div class = "investmoney">00,000</div>
+		</div>
+		
+		<div class = "investbox">
+			<div class = "investtitle">재산권금액<label class = "font">(누적)</label></div>
+			<div class = "investmoney" style = "color: #1cb97c;">00,000</div>
+		</div>
+	
+	</div> <!--end investmentdiv-->
+	
+	<div id = "propertydiv">
+		<div id = "propertytitle">재산권</div>
+		
+		<div class = "investbox">
+			<div class = "investtitle">재산권 평가액</div>
+			<div class = "investmoney">00,000</div>
+		</div>
+		
+		<div class = "investbox">
+			<div class = "investtitle">평가손익</div>
+			<div class = "investmoney" style = "color: #ff3e56;"><img src = "image/upprice.svg" class = "upanddown">0,000</div>
+		</div>
+		
+		<div class = "investbox">
+			<div class = "investtitle">재산권 구매원금</div>
+			<div class = "investmoney">00,000</div>
+		</div>
+		
+		<div class = "investbox">
+			<div class = "investtitle">재산권금액<label class = "font">(20년 12월 기준)<br>연 0%</label></div>
+			<div class = "investmoney" style = "color: #1cb97c;">00,000</div>
+		</div>
+	</div> <!--end propertydiv-->
+	
+	<div id = "holdmoneylist">
+		<div id = "holdmoneylisttitle">보유 재산권</div>
+		<div id = "searchdiv">
+			<img src = "image/searchicon_black.svg" style = "position: relative; top:5px;">
+			<select name = "sigugun" class = "select_font">
+				<option value = "" >가나다순</option>
+			</select>
+		</div>
+		
+		<hr style = "width: 1321px; height: 1px; border:none; background-color: #e9e9e9; position: relative; top:20px;">
+
+		<div id = "holdmoney">
+			<div id = "holdtitlebox">
+				<div id = "titlenamediv"><div id = "titlename">종자명</div></div>
+				<div class = "holdpercnetdiv"><div class = "holdpercnet">상승률</div></div>
+				<div class = "holdpercnetdiv" style = "text-align: center;"><div class = "holdpercnet">현재가</div></div>
+				<div class = "holdpercnetdiv" style = "text-align: right;"><div class = "holdpercnet">평균 구매가</div></div>		
+			</div> <!--end biddingtitle-->
+
+			<div id = "holdcontentbox">
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet downpercent"><img src = "image/downprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+				
+				<div class = "holdcontent">
+					<div class = "contentnamediv"><div class = "contentname">종자 품종명</div></div>
+					<div class = "contentpercnetdiv"><div class = "contentpercnet uppercent"><img src = "image/upprice.svg" style  = "position: relative; top:4px;">10%</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: center;"><div class = "contentpercnet current">00,000</div></div>
+					<div class = "contentpercnetdiv" style = "text-align: right;"><div class = "contentpercnet">00,000</div></div>
+				</div> <!--end holdcontent-->
+			</div> <!--end holdcontentbox-->
+		</div>
+	
+	</div> <!--end holdmoneylist-->
+	
+	<div id = "btndiv">
+		<a href = "#"><button id = "up"></button></a>
+		<button id = "chat"></button>
+	</div>
+</body>
+</html>

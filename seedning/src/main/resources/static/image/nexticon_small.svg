@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25">
+    <defs>
+        <filter id="ingkm8l41a">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g>
+            <g filter="url(#ingkm8l41a)" transform="translate(-1607 -17) translate(1520 18)">
+                <g>
+                    <path stroke="#000" stroke-width="1.5" d="M10 7L15 12 10 17" transform="translate(87)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

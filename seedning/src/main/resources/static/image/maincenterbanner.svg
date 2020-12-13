@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1320" height="200" viewBox="0 0 1320 200">
+    <defs>
+        <filter id="e3n6ec69na" width="110.6%" height="124.3%" x="-5.3%" y="-9.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+        </filter>
+        <filter id="ukvvtdpzhc">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+        <filter id="glyq2gitod" width="110.6%" height="124.3%" x="-5.3%" y="-9.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+        </filter>
+        <filter id="5xcv3b9qlf">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+        <path id="nig7trzyyb" d="M160 0v24.5c-5.891 0-10.667 4.701-10.667 10.5S154.11 45.5 160 45.5V70H0V45.5c5.891 0 10.667-4.701 10.667-10.5S5.89 24.5 0 24.5V0h160z"/>
+        <path id="a2owqlp3pe" d="M160 0v24.5c-5.891 0-10.667 4.701-10.667 10.5S154.11 45.5 160 45.5V70H0V45.5c5.891 0 10.667-4.701 10.667-10.5S5.89 24.5 0 24.5V0h160z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g fill="#CAD8DF">
+                    <path d="M0 0H1320V200H0z" transform="translate(-300 -1400) translate(300 1400)"/>
+                </g>
+                <g>
+                    <g transform="translate(-300 -1400) translate(300 1400) translate(860 40)">
+                        <use fill="#000" filter="url(#e3n6ec69na)" xlink:href="#nig7trzyyb"/>
+                        <path fill="#FFF" stroke="#F2F2F2" stroke-linejoin="square" stroke-width=".5" d="M159.75.25v24.003c-2.915.064-5.547 1.254-7.468 3.144-1.976 1.946-3.199 4.634-3.199 7.603 0 2.916 1.18 5.562 3.095 7.499 1.866 1.888 4.432 3.102 7.286 3.238h0l.283 24.013H.25V45.747c2.915-.064 5.547-1.254 7.468-3.144 1.976-1.946 3.199-4.634 3.199-7.603 0-2.916-1.18-5.562-3.095-7.499C5.956 25.613 3.39 24.4.536 24.263h0L.253.25H159.75z"/>
+                    </g>
+                    <g>
+                        <text fill="#1CB97C" font-family="NotoSans-Medium, Noto Sans" font-size="30" font-weight="400" letter-spacing="-.5" transform="translate(-300 -1400) translate(300 1400) translate(860 40) translate(21 10)">
+                            <tspan x="6.18" y="45">1000</tspan>
+                        </text>
+                        <text fill="#1CB97C" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="14" font-weight="400" letter-spacing="-.233" transform="translate(-300 -1400) translate(300 1400) translate(860 40) translate(21 10)">
+                            <tspan x="35.747" y="13">시드머니</tspan>
+                        </text>
+                        <g transform="translate(-300 -1400) translate(300 1400) translate(860 40) translate(21 10) translate(80 20)">
+                            <circle cx="14" cy="14" r="14" fill="#1CB97C"/>
+                            <g filter="url(#ukvvtdpzhc)">
+                                <g stroke="#000" stroke-width="1.5" transform="translate(3.5 3.5)">
+                                    <circle cx="10.5" cy="10.5" r="8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.189 8.756L8.346 13.131 10.553 8.756 12.766 13.131 14.939 8.756"/>
+                                    <path stroke-linecap="round" d="M6.129 9.629L6.129 11.371" transform="rotate(-90 6.13 10.5)"/>
+                                    <path stroke-linecap="round" d="M14.923 9.673L14.923 11.327" transform="rotate(-90 14.923 10.5)"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <text fill="#3F3F3F" font-family="NotoSans-Medium, Noto Sans" font-size="30" font-weight="400" letter-spacing="-.5" transform="translate(-300 -1400) translate(300 1400)">
+                    <tspan x="902.17" y="147">+</tspan>
+                </text>
+                <text fill="#3F3F3F" font-family="NotoSansCJKkr-Light, Noto Sans CJK KR" font-size="27" font-weight="300" letter-spacing="-.45" transform="translate(-300 -1400) translate(300 1400)">
+                    <tspan x="200" y="121">시드너 초대하고</tspan>  <tspan x="200" y="151" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-weight="bold">1000 시드머니 쿠폰 받기!</tspan>
+                </text>
+                <path fill="#FFF" d="M200 40H460V80H200z" transform="translate(-300 -1400) translate(300 1400)"/>
+                <text fill="#1CB97C" font-family="NotoSansCJKkr-Medium, Noto Sans CJK KR" font-size="30" font-weight="400" letter-spacing="-.5" transform="translate(-300 -1400) translate(300 1400)">
+                    <tspan x="215" y="72">시드닝 오픈 이벤트</tspan>
+                </text>
+                <g>
+                    <g transform="translate(-300 -1400) translate(300 1400) translate(960 90)">
+                        <use fill="#000" filter="url(#glyq2gitod)" xlink:href="#a2owqlp3pe"/>
+                        <path fill="#FFF" stroke="#F2F2F2" stroke-linejoin="square" stroke-width=".5" d="M159.75.25v24.003c-2.915.064-5.547 1.254-7.468 3.144-1.976 1.946-3.199 4.634-3.199 7.603 0 2.916 1.18 5.562 3.095 7.499 1.866 1.888 4.432 3.102 7.286 3.238h0l.283 24.013H.25V45.747c2.915-.064 5.547-1.254 7.468-3.144 1.976-1.946 3.199-4.634 3.199-7.603 0-2.916-1.18-5.562-3.095-7.499C5.956 25.613 3.39 24.4.536 24.263h0L.253.25H159.75z"/>
+                    </g>
+                    <g>
+                        <text fill="#1CB97C" font-family="NotoSans-Medium, Noto Sans" font-size="30" font-weight="400" letter-spacing="-.5" transform="translate(-300 -1400) translate(300 1400) translate(960 90) translate(21 10)">
+                            <tspan x="6.18" y="45">1000</tspan>
+                        </text>
+                        <text fill="#1CB97C" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="14" font-weight="400" letter-spacing="-.233" transform="translate(-300 -1400) translate(300 1400) translate(960 90) translate(21 10)">
+                            <tspan x="35.747" y="13">시드머니</tspan>
+                        </text>
+                        <g transform="translate(-300 -1400) translate(300 1400) translate(960 90) translate(21 10) translate(80 20)">
+                            <circle cx="14" cy="14" r="14" fill="#1CB97C"/>
+                            <g filter="url(#5xcv3b9qlf)">
+                                <g stroke="#000" stroke-width="1.5" transform="translate(3.5 3.5)">
+                                    <circle cx="10.5" cy="10.5" r="8"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.189 8.756L8.346 13.131 10.553 8.756 12.766 13.131 14.939 8.756"/>
+                                    <path stroke-linecap="round" d="M6.129 9.629L6.129 11.371" transform="rotate(-90 6.13 10.5)"/>
+                                    <path stroke-linecap="round" d="M14.923 9.673L14.923 11.327" transform="rotate(-90 14.923 10.5)"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

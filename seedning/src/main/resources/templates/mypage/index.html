@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/JavaScript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url:'createAccount',
+            type:'POST',
+            accept: "application/json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                "Header": {
+                    "ApiNm": "DrawingTransfer",
+                    "Tsymd": "20201212",
+                    "Trtm": "112428",
+                    "Iscd": "000498",
+                    "FintechApsno": "001",
+                    "ApiSvcCd": "DrawingTransferA",
+                    "IsTuno": "342",
+                    "AccessToken": "8adc7b8d4bfc48a400077d84038f0f465e22b4ccc810473e49283636ca3f9132"
+                },
+                "FinAcno": "00820100004980000000000000972",
+                "Tram": "10000",
+                "DractOtlt": "출금계좌인자내용"
+            }),
+            success: function (data) {
+                console.log("성공");
+                console.log((JSON.parse(data)));
+            },
+            error:function (jqXHR) {
+                console.log("실패")
+            }
+        });
+    });
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>라라라라</h1>
+</body>
+</html>

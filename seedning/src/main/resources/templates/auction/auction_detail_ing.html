@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AUCTION</title>
+	<style>
+		body{width:1920px; height:2220px; margin: 0 auto;}
+
+		#notificationdiv{width: 1920px; height: 60px; margin: 0 auto; background-color: #222222;}
+		#announcediv{width: 500px; height: 60px; display: table; margin-left: 40px; float: left;}
+		#announceimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
+		#announcelabel{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
+		#detaildiv{width: 130px; height: 60px; display: table; margin-right: 50px; float: right;}
+		#detaillabel{font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:-0.8px; letter-spacing: -1px; color: #ffffff; margin-left: 5px; display: table-cell; vertical-align: middle;}
+		#detailimg{width: 40px; height: 25px; text-align: center; display: table-cell; vertical-align: middle; position: relative; top:2px;}
+
+		#toptapdiv{width: 1920px; height: 100px; margin: 0 auto; border-bottom:solid 1px #e9e9e9;}
+		#logodiv{width: 150px; height: 100px; display: table; margin-left: 300px; float: left;}
+		#logoimg{width: 150px; height: 30px; text-align: center; display: table-cell; vertical-align: middle;}
+		#tapdiv{width: 900px; height: 100px; display: table; margin-left: 255px; float: left;}
+
+		#mainmenu{list-style-type:none; width: 600px; height: 100px;}
+		#mainmenu li{float: left; position: relative;margin: 15px 80px 0px 0px;}
+		#mainmenu li a{display: block; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; text-decoration: none;}
+		#mainmenu li:hover > a{color: #1cb97c;}
+		#mainmenu li:checked > a{color: #1cb97c;}
+		#mainmenu ul{list-style-type:none; margin: 0; position: absolute; width: 200px; opacity: 0;}
+		#mainmenu ul li{float: none;}
+		#mainmenu ul li a{font-size: 14px; text-align: center; font-weight: normal;}
+		#mainmenu ul li:hover a{color: #1cb97c;}
+		#mainmenu ul li:checked a{color: #1cb97c;}
+		#mainmenu li:hover ul{opacity: 1;}
+		#mainmenu li:checked ul{opacity: 1;}
+
+		#memberdiv{width: 200px; height: 100px; display: table; float: left; margin-right: 50px; float: right;}
+		#logindiv{width: 83px; height: 100px; text-align: center; display: table-cell; vertical-align: middle;}
+		#login{width: 83px; height: 40px; border-radius: 20px; border: solid 1px #e9e9e9; display: table;  outline: none; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:-0.7px; letter-spacing: -1px; color: #222222; }
+		#joindiv{width: 97px; height: 100px; text-align: center; display: table-cell; vertical-align: middle; margin-left: 10px;}
+		#join{width: 97px; height: 40px; border-radius: 20px; background-color: #1cb97c; display: table; border: none; outline: none; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:-0.7px; letter-spacing: -1px; color: #ffffff;}
+
+		#seedboxdiv{width: 1320px; height: 420px; margin: 60px auto 0px;}
+		#seedphotodiv{width:300px; height: 300px; background-color: #f5f5f5; float: left; background-image: url("image/auction_ing_hover_4.png");}
+		#companyname{height: 28px; border-radius: 5px; background-color: #1cb97c; text-align: center; font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: -0.8px; color: #ffffff; padding-left: 7px; padding-right: 7px; margin-left: 20px;}
+		#seedname{width:950px; float: left; padding-left: 20px; margin-top: 20px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 48px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:0.94; letter-spacing: -2.3px; color: #222222; float: left;}
+		#category{width:950px; float: left; padding-left: 27px; margin-top: 27px; height: 50px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:0.94; letter-spacing: -2.3px; color: #6e6e6e; float: left;}
+		#rightbox{width:300px; height: 100px;float: right; text-align: right; margin-top: 15px;}
+		.left{width:80px; height: 25px; float: left; text-align: left; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; margin-bottom: 10px;}
+		.right{width:200px; height: 25px; float: right; text-align: right; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #000000; margin-bottom: 10px;}
+		#opentime{width:300px; height: 25px;font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; float: left; margin-top: 80px; margin-left: 27px;}
+		#rightbox{width:300px; height: 100px;float: right; text-align: right; margin-top: 15px;}
+		.left{width:100px; height: 25px; float: left; text-align: left; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; margin-bottom: 10px;}
+		.right{width:200px; height: 25px; float: right; text-align: right; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #000000; margin-bottom: 10px;}
+		#progressbardiv{width: 1320px; height: 10px; margin: 0 auto; background-color: #ffffff;}
+		#progressbar{height: 10px; background-color: #1cb97c;}
+		#progressdiv{width: 1320px; height: 25px; margin:8px auto 0px;}
+		#totalpro{width:95px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #222222; float: left;}
+		#currentpro{width:130px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #6e6e6e; float: left; text-align: right;}
+		#percent{width:130px; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1px; color: #1cb97c; float: right; text-align: right; position: relative; top:-10px;}
+
+		#contenttapdiv{width:860px; height: 60px; margin-top: 95px; margin-left:300px; float: left;}
+		.tap{display: none;}
+		.tap + label{width: 420px; height: 60px; float: left; text-align: center; border: none; border-bottom: solid 1px #e9e9e9; outline:none; background-color: transparent; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -1.14px; color: #6e6e6e;}
+		.tap:checked + label{border-bottom: solid 4px #222222; color: #222222;}
+		#contentboxdiv{width: 860px; height: 700px; margin-top: 195px; margin-left:300px;}
+		#biddingbox{width: 870px; height: 700px;}
+		#biddingtitle{width: 870px; height: 60px; background-color: #1cb97c;}
+		#titlepricediv{width:320px; height: 60px; padding-left: 30px; display: table; float: left;}
+		#titleprice{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; display: table-cell; vertical-align: middle;}
+		#titlenumdiv{width:135px; height: 60px;display: table; float: left; text-align: center;}
+		#titlenum{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; display: table-cell; vertical-align: middle;}
+		#titleresultdiv{width:320px; height: 60px; padding-right: 30px; display: table; float: left; text-align: right;}
+		#titleresult{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #ffffff; display: table-cell; vertical-align: middle;}
+		#biddingcontent{width:870px; height: 580px; border-bottom:solid 1px #e9e9e9; overflow-y: auto;}
+		.resultture{background-color: #f3fbf8;}
+		.bidding{width: 850px; height: 43px;}
+		.conpricediv{width:320px; height: 23px; padding-left: 30px; display: table; float: left;}
+		.conprice{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.9px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
+		.connumdiv{width:135px; height: 23px;display: table; float: left; text-align: center;}
+		.connum{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.9px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
+		.conresultdiv{width:320px; height: 23px; padding-right: 30px; display: table; float: left; text-align: right;}
+		.conresult{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.9px; color: #3f3f3f; display: table-cell; vertical-align: middle;}
+		.successful{color: #ff3e56;}
+		.partsuccessful{color: #1f4dc2;}
+		#biddingtotal{width: 870px; height: 60px;}
+		#totalpricediv{width:320px; height: 60px; padding-left: 30px; display: table; float: left;}
+		#totalprice{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; display: table-cell; vertical-align: middle;}
+		#totalnumdiv{width:135px; height: 60px;display: table; float: left; text-align: center;}
+		#totalnum{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; display: table-cell; vertical-align: middle;}
+		#ressetdiv{width:320px; height: 60px; padding-right: 30px;float: left; text-align: right;}
+		#resetbtn{width: 109px; height: 40px; border-radius: 24px; border: solid 1px #e9e9e9; background-color: transparent; margin-top: 12px; font-family: 'Noto Sans CJK KR'; font-size: 15px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222;}
+
+		#infobox{width: 850px; height: 700px; background-color: #18A29B; position: relative; top:-700px; visibility: hidden;}
+
+
+		#orderdiv{width: 420px; height: 560px; box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05); border: solid 0.5px #6e6e6e; background-color: #ffffff; float: right; position: relative; bottom:800px; right:300px;}
+		#orderboxtitle{width: 420px; height: 80px; border-bottom: solid 1px #e9e9e9; }
+		#orderboxtitlelabel{width: 100px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: center; position: relative; top:20px; left:30px;}
+		#useseedmoneydiv{width: 420px; height: 25px; margin-top: 20px;float: left;}
+		#useseedmoney{width: 150px; height: 25px; font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #3f3f3f; margin-left: 30px;}
+		.formclass{width: 340px; height: 60px;}
+		#useedmoney{font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.9px; color: #1cb97c; float:right; position: relative; top:-25px; right:38px;}
+		#moneybox{width: 340px; height: 60px; background-color: #f2f2f2; margin-top: 10px; margin-left: 30px; display: table; text-align: left; padding-left: 20px; position: relative; top:5px;}
+		#moneyboxtitle{width: 130px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #6e6e6e; float: left; position: relative; top:16px;}
+		#price{width:100px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: right; padding-right: 5px; border: none; background-color: transparent; float: left;}
+		.plusminubtndiv{width:100px; height: 55px; display: table-cell; vertical-align: middle; position: relative; top:5px; left:5px;}
+		.minususbtn{width:40px; height: 40px; float: left; background-image: url("image/minus.png"); position: relative; left:5px;}
+		.plusbtn{width:40px; height: 40px; float: left; background-image: url("image/plus.svg"); position: relative; left:4px;}
+
+
+		#ratediv{width: 370px; height: 20px; margin-top: 14px; padding-left: 50px; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e;}
+		#ratepercent{width: 70px; height: 20px; float: right; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #1cb97c;}
+		#numdiv{width: 340px; height: 60px; background-color: #f2f2f2; margin-top: 30px; margin-left: 30px; display: table; text-align: left; padding-left: 20px;}
+		#numtitle{width: 130px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #6e6e6e; float: left; position: relative; top:16px;}
+		#quantity{width:100px; height: 55px; display: table-cell; vertical-align: middle; font-family: 'Noto Sans CJK KR'; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: right; padding-right: 5px; border: none; background-color: transparent; float: left;}
+		#weekselectdiv{width: 365px; height: 40px; margin: 20px auto 0px;}
+		.week{display: none;}
+		.week + label{width: 71px; height: 30px; border: solid 1px #d8d8d8; background-color: #ffffff; font-family: 'Noto Sans CJK KR'; font-size: 14px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #6e6e6e; padding-top: 8px; float:left; text-align: center;}
+		.week:checked + label{background-color: #1cb97c; color: #ffffff; border: solid 1px #1cb97c;}
+		#totalmoneydiv{width: 420px; height: 40px; margin : 40px auto 0px; }
+		#amount{width:100px; height: 40px; margin-left: 30px; float: left; font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: normal; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #3f3f3f;}
+		#seedmoney{width: 200px; height: 40px; float: right; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #1cb97c; }
+		#seedmoney{width: 200px; height: 40px; float: right; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: bold; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #1cb97c; }
+		#orderbtndiv{width: 420px; height: 50px; margin-top : 30px;}
+		#orderbtn{width: 360px ;height: 50px; border-radius: 25px; background-color: #1cb97c; margin-left: 30px; border: none; outline: none; font-family: 'Noto Sans CJK KR'; font-size: 21px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.8px; color: #ffffff;}
+
+		#precautiondiv{width: 430px; height: 400px; float:right; position: relative; bottom: 200px; left:120px;}
+		#precautiontitlediv{width: 420px; height: 45px; border-bottom: solid 2px #222222;}
+		#precautiontitle{width: 100px; height: 40px; font-family: 'Noto Sans CJK KR'; font-size: 24px; font-weight: 500; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #222222; text-align: center; position: relative; top:5px;}
+		#precaution{width: 430px; height: 300px; margin-top: 15px; font-family: 'Noto Sans CJK KR'; font-size: 18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height:normal; letter-spacing: -0.86px; color: #3f3f3f; margin-left: 3px;}
+
+		#footer{width: 1620px; height: 390px; background-color: #f5f5f5; position: relative; top:240px; padding-left: 310px; padding-top: 60px;}
+		.footerlabel{font-family:"Noto Sans CJK KR"; font-size:18px; font-weight: 300; font-stretch: normal; font-style: normal; line-height: 1.67px; letter-spacing: -0.3px;}
+
+		#btndiv{width: 50px; height: 120px; float: right; position:fixed;bottom:10px;right:10px;}
+		#up{width:50px; height: 50px; background-image: url("image/uppageicon.svg"); border: none; outline: none; background-color: transparent;}
+		#chat{width:60px; height: 60px; background-image: url("image/chaticon.svg"); border: none; outline: none; background-color: transparent; position: relative; top:10px; right: 8px;}
+	</style>
+	<script language="javascript">
+		function tap_click(hidden,show){
+			var1 = document.getElementById(hidden);
+			var2 = document.getElementById(show);
+
+			var1.style.visibility = "hidden";
+			var2.style.visibility = "visible";
+			this.style.fontWeight = "bold";
+			this.style.color = "#222222";
+			this.style.borderBottom = "4px";
+			this.style.borderBottomColor = "#222222";
+		}
+
+		function inputNumberFormat(obj) {
+			obj.value = comma(uncomma(obj.value));
+		}
+
+		function comma(str) {
+			str = String(str);
+			return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+		}
+
+		function uncomma(str) {
+			str = String(str);
+			return str.replace(/[^\d]+/g, '');
+		}
+
+		function change1(num){
+			var x  = document.form1;
+			var y = Number(x.price.value) + num;
+			if(y < 0) y = 0;
+			x.price.value = y;
+		}
+
+		function change2(num){
+			var x  = document.form2;
+			var y = Number(x.quantity.value) + num;
+			if(y < 0) y = 0;
+			x.quantity.value = y;
+		}
+
+		function height(height) {
+			document.getElementById("toptapdiv").style.height = height;
+		}
+	</script>
+</head>
+
+<body>
+<div id = "toptapdiv">
+	<div id = "logodiv">
+		<div id = "logoimg"><img src = "image/logo.svg"></div>
+	</div> <!--end logodiv-->
+
+	<div id = "tapdiv">
+		<ul id = "mainmenu">
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">브랜드소개</a>
+				<ul style = "left: -53px;">
+					<li><a href = "#">시드닝소개</a></li>
+					<li><a href = "#">이벤트</a></li>
+				</ul>
+			</li>
+
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#"  style = "color:#1cb97c;">옥션</a>
+				<ul  style = "left: -80px;">
+					<li><a href = "auction_early.html">예정된옥션</a></li>
+					<li><a href = "auction_ing.html">진행중인옥션</a></li>
+					<li><a href = "auction_end.html">마감된옥션</a></li>
+				</ul>
+			</li>
+
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">마켓</a>
+				<ul style = "left: -80px;">
+					<li><a href = "#">추천</a></li>
+					<li><a href = "#">판매가</a></li>
+					<li><a href = "#">최근 조회</a></li>
+					<li><a href = "#">관심</a></li>
+				</ul>
+			</li>
+
+			<li onMouseOver="height('260px')" onMouseOut="height('100px')"><a href = "#">마이페이지</a>
+				<ul style = "left: -50px;">
+					<li><a href = "#">마이포켓</a></li>
+					<li><a href = "#">마이씨드</a></li>
+					<li><a href = "mypage">회원정보</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div> <!--end tapdiv-->
+
+	<div id = "memberdiv">
+		<div id = "logindiv"><button id = "login">로그인</button></div>
+		<div id = "joindiv"><button id = "join">회원가입</button></div>
+	</div> <!--end logindiv-->
+</div> <!--end toptapdiv-->
+
+<div id = "seedboxdiv">
+	<div id = "seedphotodiv"></div>
+
+	<label id = "companyname">{{seed.corporation}}</label>
+
+	<label id = "seedname">{{seed.breedname}}</label>
+
+	<label id = "category">{{seed.classification}}류 &nbsp; &gt &nbsp; {{seed.cropname}}</label>
+
+	<div id = "opentime"><label id = "open">2020.12.13</label>&nbsp;오픈</div>
+
+	<div id = "rightbox">
+		<div class = "left">남은시간</div>
+		<div class = "right">00일 00시간 00분 00초</div>
+
+		<div class = "left">옥션수량</div>
+		<div class = "right">{{seed.total}}주</div>
+
+		<div class = "left">시작가격</div>
+		<div class = "right" style = "#1cb97c;">{{seed.start}} 시드머니</div>
+	</div>
+</div> <!--end seedboxdiv-->
+
+<div id = "progressbardiv"><div id = "progressbar" style = "width: 100%;"></div></div>
+
+<div id = "progressdiv">
+	<div id = "totalpro">2,500주 중</div>
+	<div id = "currentpro">2,808주 입찰중</div>
+
+	<div id = "percent">100%</div>
+</div> <!--end progressdiv -->
+
+<div id = "contenttapdiv">
+	<input type = "radio" name = "tap" id = "bidding" class = "tap" checked><label for = "bidding" onClick="tap_click('infobox','biddingbox')">입찰</label>
+	<input type = "radio" name = "tap" id = "info" class = "tap"><label for = "info" onClick="tap_click('biddingbox','infobox')">정보</label>
+</div> <!--end contenttapdiv-->
+
+<div id = "contentboxdiv">
+	<div id = "biddingbox">
+		<div id = "biddingtitle">
+			<div id = "titlepricediv"><div id = "titleprice">입찰가격(1주)</div></div>
+			<div id = "titlenumdiv"><div id = "titlenum">입찰수량</div></div>
+			<div id = "titleresultdiv"><div id = "titleresult">예상결과</div></div>
+		</div> <!--end biddingtitle-->
+
+		<div id = "biddingcontent">
+			{{#auctionDto}}
+			<div class = "bidding resultture" style = "margin-top: 20px;">
+				<div class = "conpricediv"><div class = "conprice">{{price}}</div></div>
+				<div class = "connumdiv"><div class = "connum">{{quantity}}</div></div>
+				<div class = "conresultdiv"><div class = "conresult successful">{{result}}</div></div>
+			</div>
+			{{/auctionDto}}
+
+			<div class = "bidding">
+				<div class = "conpricediv"><div class = "conprice">25,000</div></div>
+				<div class = "connumdiv"><div class = "connum">1630</div></div>
+				<div class = "conresultdiv"><div class = "conresult partsuccessful">선착순 부분낙찰</div></div>
+			</div>
+
+			<div class = "bidding">
+				<div class = "conpricediv"><div class = "conprice" style = "font-weight: normal;">23,500</div></div>
+				<div class = "connumdiv"><div class = "connum">50</div></div>
+				<div class = "conresultdiv"><div class = "conresult">-</div></div>
+			</div>
+
+			<div class = "bidding">
+				<div class = "conpricediv"><div class = "conprice" style = "font-weight: normal;">22,000</div></div>
+				<div class = "connumdiv"><div class = "connum">160</div></div>
+				<div class = "conresultdiv"><div class = "conresult">-</div></div>
+			</div>
+
+		</div> <!--end biddingcontent-->
+
+		<div id = "biddingtotal">
+			<div id = "totalpricediv"><div id = "totalprice">합계</div></div>
+			<div id = "totalnumdiv"><div id = "totalnum">2,808주</div></div>
+			<div id = "ressetdiv"><button id = "resetbtn"><img src = "image/reseticon.svg" style = "position: relative; top:4px;">새로고침</button></div>
+		</div> <!--end biddingtotal-->
+	</div> <!--end biddingbox-->
+
+	<div id = "infobox">
+
+	</div>
+
+</div> <!--end contentboxdiv-->
+
+<form action="/auction_detail_ing" method="post">
+	<div id = "orderdiv">
+		<div id = "orderboxtitle">
+			<div id = "orderboxtitlelabel">입찰주문</div>
+		</div>
+
+		<div id = "useseedmoneydiv">
+			<div id = "useseedmoney">사용가능 시드머니</div>
+			<div id = "useedmoney">{{user.myseed}} 시드머니</div>
+		</div>
+
+		<div id = "moneybox">
+			<form name = "form1" class = "formclass">
+				<div id = "moneyboxtitle">입찰가격(1주)</div>
+				<input type = "text" id = "price" placeholder="0" size="3" name = "price" onkeyup="inputNumberFormat(this)">
+				<div class = "plusminubtndiv">
+					<div class = "minususbtn" onClick="change1(-1);"></div>
+					<div class = "plusbtn" onClick="change1(1);"></div>
+				</div>
+			</form>
+		</div>
+
+		<div id = "ratediv">입찰가격 대비 최근 1년 종자비율 수익률<label id = "ratepercent">00%</label></div>
+
+		<div id = "numdiv">
+			<form name = "form2" class = "formclass">
+				<div id = "numtitle">수량(주)</div>
+				<input type = "text" id = "quantity" placeholder="0" size="3" name = "quantity" onkeyup="inputNumberFormat(this)">
+				<div class = "plusminubtndiv">
+					<div class = "minususbtn" onClick="change2(-1);"></div>
+					<div class = "plusbtn" onClick="change2(1);"></div>
+				</div>
+			</form>
+		</div>
+
+		<div id = "weekselectdiv">
+			<input type = "radio" id = "5" name = "weekselect" class = "week" value = "5"><label for = "5"  >5주</label>
+			<input type = "radio" id = "10" name = "weekselect" class = "week"><label for = "10">10주</label>
+			<input type = "radio" id = "20" name = "weekselect" class = "week"><label for = "20">20주</label>
+			<input type = "radio" id = "50" name = "weekselect" class = "week"><label for = "50">50주</label>
+			<input type = "radio" id = "100" name = "weekselect" class = "week"><label for = "100">100주</label>
+		</div>
+
+		<div id = "totalmoneydiv">
+			<div id = "amount">주문금액</div>
+			<div id = "seedmoney"><label>00,000</label>시드머니</div>
+		</div>
+
+		<div id = "orderbtndiv">
+			<button type="submit" id = "orderbtn">입찰주문</button>
+		</div>
+	</div> <!--end orderdiv-->
+</form>
+<div id = "precautiondiv">
+	<div id = "precautiontitlediv"><div id = "precautiontitle">유의사항</div></div>
+	<div id = "precaution">
+		<img src = "image/checkicon.svg" style = "margin-right: 3px;">옥션 마감 후 상위 입찰 가격 순 낙찰됩니다.<br>
+		<img src = "image/checkicon.svg" style = "margin-right: 3px;">입찰금의 100%가 대기금으로 설정됩니다.<br>
+		<img src = "image/checkicon.svg" style = "margin-right: 3px;">낙찰시, 옥션 마감후 다음날 오전 9시에 ‘내 지 갑’에서 대<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금이 자동으로 출금됩니다.<br>
+		<img src = "image/checkicon.svg" style = "margin-right: 3px;">구매결정은 온전히 회원의 판단으로 이뤄졌으며, 어떠한<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;경우에도 재입찰 시 원래 입찰 시 부여받은 순위는 초기화<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;됩니다.<br>
+		<img src = "image/checkicon.svg" style = "margin-right: 3px;">옥션 마지막 날은 취소가 불가하며 재입찰 시 입찰 수량/<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금액보다 높은 수량/금액만 입찰이 가능합니다.<br>
+		<img src = "image/checkicon.svg" style = "margin-right: 3px;">전체 옥션 수량 대비 30% 이상 수량으로 입찰하는 경우<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;입찰취소는 불가합니다.
+	</div>
+
+</div> <!--end precautiondiv-->
+
+<div id = "footer">
+	<img src = "image/footerlogo.svg"><br>
+	<label class = "footerlabel" style = "color: #1cb97c; position: relative; top:10px;">국내 종자 시장의 미래를 위한 첫걸음, 시드닝<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:40px;">시드닝 고객센터 02-0000-0000  |  admin@seedning.co.kr<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:80px;">(주)시드닝<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:90px;">대표자 : 이연정  |  사업자등록번호 : 000-00-00000  |  통신판매업신고 : 제 0000-서울강남-00000호<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:100px;">서울특별시 강남구 테헤란로<br></label>
+	<label class = "footerlabel" style = "color: #3f3f3f; position: relative; top:180px;">이용약관  |  개인정보처리방침<br></label>
+	<img src = "image/footerfacebook.svg" style = "position: relative; top:155px; left:900px;">
+	<img src = "image/footerblog.svg" style = "position: relative; top:158px; left:930px;">
+</div>
+
+<div id = "btndiv">
+	<a href = "#"><button id = "up"></button></a>
+	<button id = "chat"></button>
+</div>
+
+</body>
+</html>
